@@ -1,5 +1,4 @@
 *.log
-wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/
@@ -17,3 +16,15 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+
+onewebstatic/
+
+stephanieblogg/
+
+wp-content/themes/twentyfifteen/
+
+wp-content/themes/twentyseventeen/
+
+wp-content/themes/twentysixteen/
+
+local-config\.php

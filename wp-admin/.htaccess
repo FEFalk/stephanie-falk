@@ -1,0 +1,5 @@
+AuthName "This site is protected with a password"
+AuthType Basic
+AuthUserFile /customers/c/5/8/stephanie-falk.com/httpd.www/wp-admin/.htpasswd
+AuthGroupFile /dev/null 
+require valid-user

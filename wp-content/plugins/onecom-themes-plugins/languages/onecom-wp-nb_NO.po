@@ -1,0 +1,624 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: One.com WP\n"
+"POT-Creation-Date: 2018-04-03 11:46+0530\n"
+"PO-Revision-Date: 2018-04-03 11:47+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.css\n"
+"X-Poedit-SearchPathExcluded-1: *.js\n"
+
+#: inc/functions.php:111 inc/functions.php:325
+msgid "Connection timed out"
+msgstr "Tilkoblingen har utløpt"
+
+#: inc/functions.php:139
+msgid ""
+"Sorry, no compatible themes found for your version of WordPress and PHP."
+msgstr ""
+"Beklager, ingen kompatible temaer ble funnet for din versjon av WordPress og "
+"PHP."
+
+#: inc/functions.php:139 inc/functions.php:364
+msgid "Try again"
+msgstr "Prøv igjen"
+
+#: inc/functions.php:184 inc/functions.php:561
+msgid "WordPress is being upgraded. Please try again later."
+msgstr "WordPress er i gang med å bli oppdatert. Prøv igjen senere."
+
+#: inc/functions.php:199
+msgid "Installing theme"
+msgstr "Installerer tema"
+
+#: inc/functions.php:219 inc/functions.php:601
+msgid "Something went wrong. Please contact the support at One.com."
+msgstr "Noe gikk galt. Ta kontakt med support hos One.com."
+
+#: inc/functions.php:233 inc/functions.php:618
+msgid ""
+"Unable to connect to the file system. Please contact the support at One.com."
+msgstr "Kan ikke koble til filsystemet. Ta kontakt med support hos One.com."
+
+#: inc/functions.php:248
+msgid "Theme installed successfully"
+msgstr "Tema er installert"
+
+#: inc/functions.php:251 inc/functions.php:266 inc/functions.php:641
+#: inc/functions.php:643 templates/network/plugin-listing.php:86
+#: templates/network/plugin-listing.php:88
+#: templates/network/recommended-plugin-listing.php:99
+#: templates/network/theme-listing-loop.php:77
+#: templates/network/theme-listing-loop.php:79 templates/plugin-listing.php:86
+#: templates/plugin-listing.php:88 templates/recommended-plugin-listing.php:99
+#: templates/theme-listing-loop.php:74 templates/theme-listing-loop.php:76
+msgid "Activate"
+msgstr "Aktiver"
+
+#: inc/functions.php:364
+msgid ""
+"Sorry, no compatible plugins found with your version of WordPress and PHP."
+msgstr ""
+"Beklager, ingen kompatible utvidelser ble funnet for din versjon av "
+"WordPress og PHP."
+
+#: inc/functions.php:582
+msgid "Installing plugin"
+msgstr "Installerer plugin"
+
+#: inc/functions.php:633
+msgid "Plugin installed successfully"
+msgstr "Plug-in er installert"
+
+#: onecom-themes-plugins.php:237 onecom-themes-plugins.php:238
+#: onecom-themes-plugins.php:293 onecom-themes-plugins.php:296
+msgid "One.com"
+msgstr "One.com"
+
+#: onecom-themes-plugins.php:247 onecom-themes-plugins.php:248
+#: onecom-themes-plugins.php:305 onecom-themes-plugins.php:308
+msgid "Themes"
+msgstr "Temaer"
+
+#: onecom-themes-plugins.php:255 onecom-themes-plugins.php:256
+#: onecom-themes-plugins.php:263 onecom-themes-plugins.php:264
+#: onecom-themes-plugins.php:271 onecom-themes-plugins.php:272
+#: onecom-themes-plugins.php:316 onecom-themes-plugins.php:319
+#: onecom-themes-plugins.php:330
+msgid "Plugins"
+msgstr "Utvidelser"
+
+#: onecom-themes-plugins.php:327 staging/Includes/Core/Administrator.php:95
+#: staging/Includes/Core/Administrator.php:96
+#: staging/Includes/Core/Administrator.php:109
+#: staging/Includes/Core/Administrator.php:110
+msgid "Staging"
+msgstr ""
+
+#: onecom-themes-plugins.php:341
+msgid "One.com Control Panel"
+msgstr "One.com Kontrollpanel"
+
+#: onecom-themes-plugins.php:344
+msgid "Go to Control Panel at One.com"
+msgstr "Gå til Kontrollpanel hos One.com"
+
+#: onecom-themes-plugins.php:358
+msgid "One.com Guides & FAQ"
+msgstr "One.com Guider & FAQ"
+
+#: onecom-themes-plugins.php:361
+msgid "Go to Guides & FAQ at One.com"
+msgstr "Gå til Guider & FAQ hos One.com"
+
+#: staging/Includes/Core/Jobs/Directories.php:281
+#, php-format
+msgid "Unable to open %s with mode %s"
+msgstr ""
+
+#: staging/Includes/Core/Jobs/Directories.php:300
+#, php-format
+msgid "Unable to write to: %s"
+msgstr ""
+
+#: staging/Includes/Core/Jobs/Directories.php:304
+msgid "Out of disk space."
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:2
+msgid "Staging Site Name:"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:8
+msgid ""
+"<br>Probably not enough free disk space to create a staging site. <br> You "
+"can continue but its likely that the copying process will fail."
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:18
+msgid "DB Tables"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:21
+msgid "Files"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:35
+msgid "Please Deselect the tables you dont want to copy."
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:76
+msgid ""
+"Uncheck the folders you do not want to copy. Click on them for expanding!"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:83
+msgid "Extra directories to copy"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:91
+msgid ""
+"Enter one folder path per line.<br>Folders must start with absolute path: "
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:103
+msgid "All files will be copied to: "
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/staging_details.php:13
+msgid "Your staging site"
+msgstr "Ditt testmiljø"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:15
+msgid "Staging site broken"
+msgstr "Staging-side virker ikke"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:21
+msgid "Staging Frontend:"
+msgstr "Testmiljø frontend:"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:22
+msgid "Staging Backend:"
+msgstr "Testmiljø backend:"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:27
+msgid ""
+"We have detected that your staging site is broken due to missing database "
+"table(s) and/or directory(s)."
+msgstr ""
+"Vi har registrert at staging-siden virker ikke pga. manglende "
+"databasetabeller eller mapper."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:28
+msgid "Click on \"Rebuild Staging\" to regenerate your staging site."
+msgstr "Klikk på “Gjenoppbygg staging” for å bygge staging-siden på nytt."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:43
+msgid ""
+"The staging website is a copy of your live website, where you can test new "
+"plugins and themes without affecting your live website."
+msgstr ""
+"Testmiljøet er en kopi av ditt live nettsted, hvor du kan teste nye plugins "
+"og tema uten at nettstedet blir berørt."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:44
+msgid ""
+"Only one staging version can be created for each website. When you rebuild a "
+"staging website, any existing staging site will be replaced with a new "
+"snapshot of your live website."
+msgstr ""
+"Det er bare mulig å opprette ett testmiljø per nettsted. Når du "
+"gjenoppbygger et testmiljø vil alle eksisterende testmiljøer bli erstattet "
+"av et nytt bilde av ditt live nettsted."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:45
+msgid ""
+"The login details for the staging backend are the same as for the live "
+"website."
+msgstr ""
+"Brukernavn og passord til testmiljøet er identisk som til ditt live nettsted."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:47
+msgid ""
+"Caution: Rebuilding will overwrite all files and the database of your "
+"existing staging website."
+msgstr ""
+"Forsiktig: Hvis du gjenoppbygger blir alle filer og databasen til ditt "
+"eksisterende testmiljø overskrevet."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:52
+#: staging/Includes/Core/views/ajax/staging_details.php:53
+#: staging/Includes/Core/views/includes/footer.php:14
+#: staging/Includes/Core/views/includes/footer.php:29
+#: staging/Includes/Core/views/includes/footer.php:44
+#: staging/Includes/Core/views/includes/footer.php:62
+#: staging/Includes/Core/views/staging.php:34
+msgid "Are you sure?"
+msgstr "Er du sikker?"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:52
+msgid "Rebuild Staging"
+msgstr "Gjenoppbygg testmiljø"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:53
+msgid "Delete Staging"
+msgstr "Slett testmiljø"
+
+#: staging/Includes/Core/views/blocked.php:14
+msgid "Staging feature not available."
+msgstr ""
+
+#: staging/Includes/Core/views/blocked.php:16
+msgid ""
+"Staging feature is not yet available for the following type of WordPress "
+"websites:"
+msgstr ""
+
+#: staging/Includes/Core/views/includes/footer.php:16
+msgid ""
+"This will overwrite your staging website with a copy of the files and "
+"database from your live website. All changes made in your staging website "
+"will be lost."
+msgstr ""
+"Dette overskriver ditt testmiljø med en kopi av filene og databasen fra ditt "
+"live nettsted. Alle endringer foretatt I testmiljøet går tapt."
+
+#: staging/Includes/Core/views/includes/footer.php:19
+#: staging/Includes/Core/views/includes/footer.php:34
+#: staging/Includes/Core/views/includes/footer.php:50
+#: staging/Includes/Core/views/includes/footer.php:67
+msgid "OK"
+msgstr ""
+
+#: staging/Includes/Core/views/includes/footer.php:20
+#: staging/Includes/Core/views/includes/footer.php:35
+#: staging/Includes/Core/views/includes/footer.php:51
+#: staging/Includes/Core/views/includes/footer.php:68
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: staging/Includes/Core/views/includes/footer.php:31
+msgid ""
+"This takes a snapshot of your blog and copies it to a \"staging area\" where "
+"you can test changes without affecting your live site. There's only one "
+"staging area, so every time you click this button the old staging area is "
+"lost forever, replaced with a snapshot of your live blog."
+msgstr ""
+
+#: staging/Includes/Core/views/includes/footer.php:46
+msgid "The staging site will be lost."
+msgstr "Testmiljøet går tapt."
+
+#: staging/Includes/Core/views/includes/footer.php:64
+msgid ""
+"This will overwrite your live website with a copy of the files and database "
+"from your staging website."
+msgstr ""
+"Dette overskriver ditt live nettsted med en kopi av filene og databasen fra "
+"testmiljøet."
+
+#: staging/Includes/Core/views/includes/header.php:6
+msgid "One Staging"
+msgstr ""
+
+#: staging/Includes/Core/views/includes/header.php:8
+msgid "This is your Staging site."
+msgstr ""
+
+#: staging/Includes/Core/views/live.php:7
+msgid "Please wait, while we are copying your live site to the staging site."
+msgstr "Vennligst vent mens vi kopierer nettstedet ditt til testmiljøet."
+
+#: staging/Includes/Core/views/live.php:15
+msgid "Please wait, while we are updating staging site."
+msgstr "Vennligst vent mens vi oppdaterer staging site."
+
+#: staging/Includes/Core/views/live.php:21
+msgid "Please wait, while we are deleting staging site."
+msgstr "Vennligst vent mens vi sletter lagringssted."
+
+#: staging/Includes/Core/views/live.php:47
+msgid ""
+"Create a staging version of your site to try out new plugins, themes and "
+"customizations"
+msgstr ""
+"Opprett en testversjon av nettstedet for å prøve ut nye plugins, tema og "
+"tilpasninger"
+
+#: staging/Includes/Core/views/live.php:48
+msgid ""
+"The staging environment allows you to make changes to your site, without it "
+"affecting the live version of your website. When you create a staging site, "
+"it will be a snapshot of your live website."
+msgstr ""
+"I testmiljøet kan du foreta endringer på nettstedet uten at det berører "
+"versjonen som er I drift. Når du oppretter en testside vil denne være et "
+"bilde av ditt live nettsted."
+
+#: staging/Includes/Core/views/live.php:48
+msgid ""
+"You can use it as a playground to test new plugins and themes. Once you are "
+"satisfied with the result, you can copy all the changes to your live website "
+"with a single click."
+msgstr ""
+"Du kan bruke testmiljøet il å prøve ut nye plugins og tema. Når du er "
+"fornøyd med resultatet kan du med bare ett klikk kopiere alle endringene til "
+"versjonen som er I drift."
+
+#: staging/Includes/Core/views/live.php:49
+msgid "Please note"
+msgstr "Vennligst merk"
+
+#: staging/Includes/Core/views/live.php:49
+msgid ""
+"Plugins that are URL sensitive may not work as expected on the staging site."
+msgstr ""
+"Det kan forekomme, at utvidelser og plugins som er URL-sensitive, ikke "
+"fungerer som forventet på staging-siden."
+
+#: staging/Includes/Core/views/live.php:51
+msgid "Create staging site"
+msgstr "Opprett testmiljø"
+
+#: staging/Includes/Core/views/staging.php:6
+msgid "Please wait, while we are copying staging into live."
+msgstr ""
+
+#: staging/Includes/Core/views/staging.php:18
+msgid "Copy staging to your live site"
+msgstr "Kopier testmiljø til live nettsted"
+
+#: staging/Includes/Core/views/staging.php:22
+msgid ""
+"This is your staging website, a snapshot of your live website. Here you can "
+"test changes without affecting your live website."
+msgstr ""
+"Dette er testnettstedet ditt, et bilde av ditt live nettsted. Her kan du "
+"teste endringer uten at det berører ditt live nettsted."
+
+#: staging/Includes/Core/views/staging.php:24
+msgid ""
+"When you copy from staging to live, the live website will get replaced with "
+"a snapshot of this staging website."
+msgstr ""
+"Når du kopierer fra test til live, blir ditt live nettsted erstattet med et "
+"bilde av dette testmiljøet."
+
+#: staging/Includes/Core/views/staging.php:25
+msgid "Before you continue, please be aware of the following:"
+msgstr "Før du fortsetter må du legge merke til følgende:"
+
+#: staging/Includes/Core/views/staging.php:28
+msgid "It is not possible to reverse this process."
+msgstr "Det er ikke mulig å omgjøre denne prosessen."
+
+#: staging/Includes/Core/views/staging.php:29
+msgid ""
+"When you copy from staging to live, all data and files of your live website "
+"will be overwritten. This includes recently added posts, pages, media "
+"uploads and files."
+msgstr ""
+"Når du kopierer fra test til live, blir alle data og filer på ditt live "
+"nettsted overskrevet. Denne inkluderer nylig publiserte poster, sider, "
+"mediefiler og filer."
+
+#: staging/Includes/Core/views/staging.php:30
+msgid ""
+"It can take a couple of minutes for the copy to finish, so please do not "
+"close or navigate away from this page."
+msgstr ""
+"Det kan ta noen minutter før kopieringsjobben er ferdig, så vennligst ikke "
+"lukk eller gå bort fra denne siden."
+
+#: staging/Includes/Core/views/staging.php:34
+msgid "Copy staging to live"
+msgstr "Kopier test til live"
+
+#: staging/Includes/Core/views/staging.php:39
+msgid "Live website details not found. Can not copy staging into live!"
+msgstr ""
+
+#: staging/one_staging.php:147
+msgid "Status"
+msgstr ""
+
+#: staging/one_staging.php:148
+msgid "Response"
+msgstr ""
+
+#: staging/one_staging.php:149
+msgid "Copied successfully."
+msgstr "Testmiljø opprettet."
+
+#: staging/one_staging.php:150
+#, fuzzy
+#| msgid "Something went wrong. Please contact the support at One.com."
+msgid "Something went wrong; please try again."
+msgstr "Noe gikk galt. Ta kontakt med support hos One.com."
+
+#: staging/one_staging.php:154
+msgid "Preparing..."
+msgstr "Forbereder…"
+
+#: staging/one_staging.php:155
+msgid "Start copying..."
+msgstr "Start kopiering…"
+
+#: staging/one_staging.php:156
+msgid "Copying database..."
+msgstr "Kopierer database…"
+
+#: staging/one_staging.php:157
+msgid "Preparing directories..."
+msgstr "Forbereder mapper…"
+
+#: staging/one_staging.php:158
+msgid "Copying files..."
+msgstr "Kopierer filer…"
+
+#: staging/one_staging.php:159
+msgid "Updating database..."
+msgstr "Oppdaterer database…"
+
+#: staging/one_staging.php:160
+msgid "Finalising..."
+msgstr "Fullfører…"
+
+#: staging/one_staging.php:161
+msgid "Finished!"
+msgstr "Fullført!"
+
+#: staging/one_staging.php:162
+#, fuzzy
+#| msgid "Delete Staging"
+msgid "Deleting staging..."
+msgstr "Slett testmiljø"
+
+#: templates/discouraged-plugin-listing.php:13
+#: templates/discouraged-plugin-listing.php:25 templates/plugin-listing.php:25
+#: templates/recommended-plugin-listing.php:25
+msgid "Discouraged plugins"
+msgstr "Plugins du bør unngå"
+
+#: templates/discouraged-plugin-listing.php:23
+#: templates/network/plugin-listing.php:23
+#: templates/network/recommended-plugin-listing.php:23
+#: templates/plugin-listing.php:23 templates/recommended-plugin-listing.php:23
+msgid "One.com plugins"
+msgstr "One.com utvidelser"
+
+#: templates/discouraged-plugin-listing.php:24
+#: templates/network/plugin-listing.php:24
+#: templates/network/recommended-plugin-listing.php:24
+#: templates/plugin-listing.php:24 templates/recommended-plugin-listing.php:24
+msgid "Recommended plugins"
+msgstr "Anbefalte utvidelser"
+
+#: templates/discouraged-plugin-listing.php:58
+msgid ""
+"You are doing great! None of your installed plugins, are on our list of "
+"discouraged plugins."
+msgstr ""
+"Her ser det bra ut! Ingen av dine installerte plugins står på vår liste over "
+"plugins du bør unngå."
+
+#: templates/discouraged-plugin-listing.php:60
+msgid ""
+"Your WordPress site should work the best possible way. We checked the "
+"plugins on your website, and listed those we don't recommended you to use."
+msgstr ""
+"WordPress-nettstedet ditt bør fungere best mulig. Vi har derfor kontrollert "
+"plugins på nettstedet ditt og listet opp plugins vi ikke anbefaler at du "
+"bruker."
+
+#: templates/discouraged-plugin-listing.php:60
+msgid "There are also some suggestions for alternative plugins to use instead."
+msgstr ""
+"Vi kommer også med forslag til andre plugins som du kan bruke i stedet."
+
+#: templates/discouraged-plugin-listing.php:63
+msgid "View full list of discouraged plugins"
+msgstr "Vis full liste over plugins som ikke er anbefalt"
+
+#: templates/discouraged-plugin-listing.php:79
+msgid "Deactivate"
+msgstr "Deaktiver"
+
+#: templates/discouraged-plugin-listing.php:88
+msgid "Suggested alternative"
+msgstr "Anbefalt alternativ"
+
+#: templates/discouraged-plugin-listing.php:88
+msgid "Suggested alternatives"
+msgstr "Anbefalte alternativer"
+
+#: templates/discouraged-plugin-listing.php:117
+msgid "Yes, deactivate plugin"
+msgstr "Ja, deaktiver plugin"
+
+#: templates/discouraged-plugin-listing.php:117
+msgid "Not right now"
+msgstr "Ikke nå"
+
+#: templates/discouraged-plugin-listing.php:119
+msgid "Are you sure that you want to deactivate this plugin?"
+msgstr "Er du sikker på at du vil deaktivere plugin?"
+
+#: templates/discouraged-plugin-listing.php:121
+msgid "Deactivating a plugin can break functionality on your website."
+msgstr ""
+"Hvis du deaktiverer en plugin kan dette føre til at noe slutter å fungere på "
+"nettstedet."
+
+#: templates/network/plugin-listing.php:13 templates/plugin-listing.php:13
+msgid "Plugins that bring the One.com experience and services to WordPress."
+msgstr "Plugins som bringer One.com-opplevelsen og - tjenester til WordPress."
+
+#: templates/network/plugin-listing.php:83
+#: templates/network/recommended-plugin-listing.php:97
+#: templates/network/theme-listing-loop.php:67 templates/plugin-listing.php:83
+#: templates/recommended-plugin-listing.php:97
+#: templates/theme-listing-loop.php:64
+msgid "Active"
+msgstr "Aktiv"
+
+#: templates/network/plugin-listing.php:91
+#: templates/network/recommended-plugin-listing.php:101
+#: templates/plugin-listing.php:91 templates/recommended-plugin-listing.php:101
+msgid "Install now"
+msgstr "Installer nå"
+
+#: templates/network/recommended-plugin-listing.php:13
+#: templates/recommended-plugin-listing.php:13
+msgid "Presenting some of our favorite WordPress plugins, curated for quality."
+msgstr ""
+"Vi presenterer noen av våre WordPress-favoritter, spesielt valgt ut til deg."
+
+#: templates/network/recommended-plugin-listing.php:109
+#: templates/recommended-plugin-listing.php:109
+msgid "More details"
+msgstr "Mer informasjon"
+
+#: templates/network/recommended-plugin-listing.php:116
+#: templates/recommended-plugin-listing.php:116
+msgid "By"
+msgstr "Av"
+
+#: templates/network/theme-listing-loop.php:49
+#: templates/theme-listing-loop.php:42
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: templates/network/theme-listing-loop.php:82
+#: templates/network/theme-listing.php:87 templates/theme-listing-loop.php:79
+#: templates/theme-listing.php:87
+msgid "Install"
+msgstr "Installer"
+
+#: templates/network/theme-listing.php:14 templates/theme-listing.php:14
+msgid "Exclusive themes specially crafted for One.com customers."
+msgstr "Eksklusive temaer spesialutviklet for One.com-kunder."
+
+#: templates/network/theme-listing.php:83 templates/theme-listing.php:83
+msgid "Back to themes"
+msgstr "Tilbake til temaer"
+
+#: templates/network/theme-listing.php:90 templates/theme-listing.php:90
+msgid "Desktop"
+msgstr "PC"
+
+#: templates/network/theme-listing.php:91 templates/theme-listing.php:91
+msgid "Mobile"
+msgstr "Mobil"
+
+#~ msgid "Presenting some of the best WordPress plugins, curated for quality."
+#~ msgstr "Vi presenterer noen av de beste utvidelser for WordPress."

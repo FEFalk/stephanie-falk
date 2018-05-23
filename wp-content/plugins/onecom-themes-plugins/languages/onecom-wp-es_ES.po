@@ -1,0 +1,635 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: One.com WP\n"
+"POT-Creation-Date: 2018-04-03 11:37+0530\n"
+"PO-Revision-Date: 2018-04-03 11:38+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.css\n"
+"X-Poedit-SearchPathExcluded-1: *.js\n"
+
+#: inc/functions.php:111 inc/functions.php:325
+msgid "Connection timed out"
+msgstr "Tiempo de espera para conectarse agotado"
+
+#: inc/functions.php:139
+msgid ""
+"Sorry, no compatible themes found for your version of WordPress and PHP."
+msgstr ""
+"Lo sentimos, no se han encontrado temas compatibles con su versión de "
+"WordPress y PHP."
+
+#: inc/functions.php:139 inc/functions.php:364
+msgid "Try again"
+msgstr "Vuelva a intentarlo"
+
+#: inc/functions.php:184 inc/functions.php:561
+msgid "WordPress is being upgraded. Please try again later."
+msgstr "WordPress se está actualizando. Por favor, pruebe de nuevo más tarde."
+
+#: inc/functions.php:199
+msgid "Installing theme"
+msgstr "Instalando el tema"
+
+#: inc/functions.php:219 inc/functions.php:601
+msgid "Something went wrong. Please contact the support at One.com."
+msgstr ""
+"Algo salió mal. Póngase en contacto con el servicio de asistencia de One.com."
+
+#: inc/functions.php:233 inc/functions.php:618
+msgid ""
+"Unable to connect to the file system. Please contact the support at One.com."
+msgstr ""
+"Imposible conectar con el sistema de archivos. Comuníquese con el servicio "
+"de asistencia de One.com."
+
+#: inc/functions.php:248
+msgid "Theme installed successfully"
+msgstr "Tema instalado correctamente"
+
+#: inc/functions.php:251 inc/functions.php:266 inc/functions.php:641
+#: inc/functions.php:643 templates/network/plugin-listing.php:86
+#: templates/network/plugin-listing.php:88
+#: templates/network/recommended-plugin-listing.php:99
+#: templates/network/theme-listing-loop.php:77
+#: templates/network/theme-listing-loop.php:79 templates/plugin-listing.php:86
+#: templates/plugin-listing.php:88 templates/recommended-plugin-listing.php:99
+#: templates/theme-listing-loop.php:74 templates/theme-listing-loop.php:76
+msgid "Activate"
+msgstr "Activar"
+
+#: inc/functions.php:364
+msgid ""
+"Sorry, no compatible plugins found with your version of WordPress and PHP."
+msgstr ""
+"Lo sentimos, no se han encontrado plugins compatibles con su versión de "
+"WordPress y PHP."
+
+#: inc/functions.php:582
+msgid "Installing plugin"
+msgstr "Instalando plugin"
+
+#: inc/functions.php:633
+msgid "Plugin installed successfully"
+msgstr "Plugin instalado correctamente"
+
+#: onecom-themes-plugins.php:237 onecom-themes-plugins.php:238
+#: onecom-themes-plugins.php:293 onecom-themes-plugins.php:296
+msgid "One.com"
+msgstr "One.com"
+
+#: onecom-themes-plugins.php:247 onecom-themes-plugins.php:248
+#: onecom-themes-plugins.php:305 onecom-themes-plugins.php:308
+msgid "Themes"
+msgstr "Temas"
+
+#: onecom-themes-plugins.php:255 onecom-themes-plugins.php:256
+#: onecom-themes-plugins.php:263 onecom-themes-plugins.php:264
+#: onecom-themes-plugins.php:271 onecom-themes-plugins.php:272
+#: onecom-themes-plugins.php:316 onecom-themes-plugins.php:319
+#: onecom-themes-plugins.php:330
+msgid "Plugins"
+msgstr "Plugins"
+
+#: onecom-themes-plugins.php:327 staging/Includes/Core/Administrator.php:95
+#: staging/Includes/Core/Administrator.php:96
+#: staging/Includes/Core/Administrator.php:109
+#: staging/Includes/Core/Administrator.php:110
+msgid "Staging"
+msgstr ""
+
+#: onecom-themes-plugins.php:341
+msgid "One.com Control Panel"
+msgstr "Panel de control de One.com"
+
+#: onecom-themes-plugins.php:344
+msgid "Go to Control Panel at One.com"
+msgstr "Ir al Panel de control de One.com"
+
+#: onecom-themes-plugins.php:358
+msgid "One.com Guides & FAQ"
+msgstr "Guías y preguntas frecuentes de One.com"
+
+#: onecom-themes-plugins.php:361
+msgid "Go to Guides & FAQ at One.com"
+msgstr "Ir a la sección Guías y FAQ de One.com"
+
+#: staging/Includes/Core/Jobs/Directories.php:281
+#, php-format
+msgid "Unable to open %s with mode %s"
+msgstr ""
+
+#: staging/Includes/Core/Jobs/Directories.php:300
+#, php-format
+msgid "Unable to write to: %s"
+msgstr ""
+
+#: staging/Includes/Core/Jobs/Directories.php:304
+msgid "Out of disk space."
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:2
+msgid "Staging Site Name:"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:8
+msgid ""
+"<br>Probably not enough free disk space to create a staging site. <br> You "
+"can continue but its likely that the copying process will fail."
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:18
+msgid "DB Tables"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:21
+msgid "Files"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:35
+msgid "Please Deselect the tables you dont want to copy."
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:76
+msgid ""
+"Uncheck the folders you do not want to copy. Click on them for expanding!"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:83
+msgid "Extra directories to copy"
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:91
+msgid ""
+"Enter one folder path per line.<br>Folders must start with absolute path: "
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/scan.php:103
+msgid "All files will be copied to: "
+msgstr ""
+
+#: staging/Includes/Core/views/ajax/staging_details.php:13
+msgid "Your staging site"
+msgstr "Su página web de prueba"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:15
+msgid "Staging site broken"
+msgstr "La página de prueba está inutilizable"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:21
+msgid "Staging Frontend:"
+msgstr "Parte pública de la página de prueba:"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:22
+msgid "Staging Backend:"
+msgstr "Parte administrativa de la página de prueba:"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:27
+msgid ""
+"We have detected that your staging site is broken due to missing database "
+"table(s) and/or directory(s)."
+msgstr ""
+"Nos hemos dado cuenta de que su página de prueba está inutilizable ya que no "
+"se encuentran una o varías carpetas y bases de datos."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:28
+msgid "Click on \"Rebuild Staging\" to regenerate your staging site."
+msgstr "Haga click en “Reconstruir página de prueba” para regenerarla."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:43
+msgid ""
+"The staging website is a copy of your live website, where you can test new "
+"plugins and themes without affecting your live website."
+msgstr ""
+"La página de prueba es una copia de su página publicada donde puede probar "
+"nuevos complementos y temas sin afectar a la página que tiene publicada."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:44
+msgid ""
+"Only one staging version can be created for each website. When you rebuild a "
+"staging website, any existing staging site will be replaced with a new "
+"snapshot of your live website."
+msgstr ""
+"Solo se puede crear una versión de prueba para cada sitio web. Cuando vuelve "
+"a generar un sitio de prueba, se reemplazará cualquier sitio de prueba con "
+"una nueva copia idéntica de su sitio publicado."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:45
+msgid ""
+"The login details for the staging backend are the same as for the live "
+"website."
+msgstr ""
+"Las credenciales para iniciar sesión en la parte administrativa de la página "
+"de prueba son las mismas que las de la páginapublicada."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:47
+msgid ""
+"Caution: Rebuilding will overwrite all files and the database of your "
+"existing staging website."
+msgstr ""
+"¡Cuidado! Si vuelve a generar la página de prueba, se sobrescribirán todos "
+"los archivos y la base de datos de su página de prueba existente."
+
+#: staging/Includes/Core/views/ajax/staging_details.php:52
+#: staging/Includes/Core/views/ajax/staging_details.php:53
+#: staging/Includes/Core/views/includes/footer.php:14
+#: staging/Includes/Core/views/includes/footer.php:29
+#: staging/Includes/Core/views/includes/footer.php:44
+#: staging/Includes/Core/views/includes/footer.php:62
+#: staging/Includes/Core/views/staging.php:34
+msgid "Are you sure?"
+msgstr "¿Está seguro?"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:52
+msgid "Rebuild Staging"
+msgstr "Volver a generar página de prueba"
+
+#: staging/Includes/Core/views/ajax/staging_details.php:53
+msgid "Delete Staging"
+msgstr "Eliminar página de prueba"
+
+#: staging/Includes/Core/views/blocked.php:14
+msgid "Staging feature not available."
+msgstr ""
+
+#: staging/Includes/Core/views/blocked.php:16
+msgid ""
+"Staging feature is not yet available for the following type of WordPress "
+"websites:"
+msgstr ""
+
+#: staging/Includes/Core/views/includes/footer.php:16
+msgid ""
+"This will overwrite your staging website with a copy of the files and "
+"database from your live website. All changes made in your staging website "
+"will be lost."
+msgstr ""
+"Esto sobrescribirá su página web de prueba con una copia de los archivos y "
+"la base de datos de su página web publicada. Todos los cambios que haya "
+"realizado en su página web de prueba se perderán."
+
+#: staging/Includes/Core/views/includes/footer.php:19
+#: staging/Includes/Core/views/includes/footer.php:34
+#: staging/Includes/Core/views/includes/footer.php:50
+#: staging/Includes/Core/views/includes/footer.php:67
+msgid "OK"
+msgstr ""
+
+#: staging/Includes/Core/views/includes/footer.php:20
+#: staging/Includes/Core/views/includes/footer.php:35
+#: staging/Includes/Core/views/includes/footer.php:51
+#: staging/Includes/Core/views/includes/footer.php:68
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: staging/Includes/Core/views/includes/footer.php:31
+msgid ""
+"This takes a snapshot of your blog and copies it to a \"staging area\" where "
+"you can test changes without affecting your live site. There's only one "
+"staging area, so every time you click this button the old staging area is "
+"lost forever, replaced with a snapshot of your live blog."
+msgstr ""
+
+#: staging/Includes/Core/views/includes/footer.php:46
+msgid "The staging site will be lost."
+msgstr "La página de prueba se perderá."
+
+#: staging/Includes/Core/views/includes/footer.php:64
+msgid ""
+"This will overwrite your live website with a copy of the files and database "
+"from your staging website."
+msgstr ""
+"Esto sobrescribirá su página web publicada con una copia de los archivos y "
+"la base de datos de su página web de prueba."
+
+#: staging/Includes/Core/views/includes/header.php:6
+msgid "One Staging"
+msgstr ""
+
+#: staging/Includes/Core/views/includes/header.php:8
+msgid "This is your Staging site."
+msgstr ""
+
+#: staging/Includes/Core/views/live.php:7
+msgid "Please wait, while we are copying your live site to the staging site."
+msgstr ""
+"Por favor, espere mientras se copia su página publicada al página de prueba."
+
+#: staging/Includes/Core/views/live.php:15
+msgid "Please wait, while we are updating staging site."
+msgstr "Espere, mientras estamos actualizando el sitio de ensayo."
+
+#: staging/Includes/Core/views/live.php:21
+msgid "Please wait, while we are deleting staging site."
+msgstr "Espere, mientras estamos eliminando el sitio de ensayo."
+
+#: staging/Includes/Core/views/live.php:47
+msgid ""
+"Create a staging version of your site to try out new plugins, themes and "
+"customizations"
+msgstr ""
+"Cree una versión de prueba de su sitio web para probar nuevos complementos, "
+"temas y personalizaciones"
+
+#: staging/Includes/Core/views/live.php:48
+msgid ""
+"The staging environment allows you to make changes to your site, without it "
+"affecting the live version of your website. When you create a staging site, "
+"it will be a snapshot of your live website."
+msgstr ""
+"El entorno de prueba le permite hacer cambios en su sitio sin afectar a la "
+"versión publicada del mismo. Cuando crea un sitio de prueba, será una copia "
+"exacta de su sitio publicado."
+
+#: staging/Includes/Core/views/live.php:48
+msgid ""
+"You can use it as a playground to test new plugins and themes. Once you are "
+"satisfied with the result, you can copy all the changes to your live website "
+"with a single click."
+msgstr ""
+"Puede utilizarlo para probar nuevos complementos y temas. Cuando esté "
+"satisfecho con el resultado, puede implementar todos los cambios en su sitio "
+"publicado con tan solo un clic."
+
+#: staging/Includes/Core/views/live.php:49
+msgid "Please note"
+msgstr "Nótese"
+
+#: staging/Includes/Core/views/live.php:49
+msgid ""
+"Plugins that are URL sensitive may not work as expected on the staging site."
+msgstr ""
+"Plugins que son dependientes de la URL posiblemente no funcionen "
+"correctamente en la página de prueba."
+
+#: staging/Includes/Core/views/live.php:51
+msgid "Create staging site"
+msgstr "Crear página de prueba"
+
+#: staging/Includes/Core/views/staging.php:6
+msgid "Please wait, while we are copying staging into live."
+msgstr ""
+
+#: staging/Includes/Core/views/staging.php:18
+msgid "Copy staging to your live site"
+msgstr "Copiar página de prueba a su página publicada"
+
+#: staging/Includes/Core/views/staging.php:22
+msgid ""
+"This is your staging website, a snapshot of your live website. Here you can "
+"test changes without affecting your live website."
+msgstr ""
+"Esta es su página web de prueba, una copia idéntica de su página web "
+"publicada. Aquí puede probar cambios sin afectar a su página publicada."
+
+#: staging/Includes/Core/views/staging.php:24
+msgid ""
+"When you copy from staging to live, the live website will get replaced with "
+"a snapshot of this staging website."
+msgstr ""
+"Cuando copia desde su página de prueba a la página publicada, se reemplazará "
+"la página web publicada con una copia idéntica de este página de prueba."
+
+#: staging/Includes/Core/views/staging.php:25
+msgid "Before you continue, please be aware of the following:"
+msgstr "Antes de continuar, tenga en cuenta lo siguiente:"
+
+#: staging/Includes/Core/views/staging.php:28
+msgid "It is not possible to reverse this process."
+msgstr "No es posible revertir este proceso."
+
+#: staging/Includes/Core/views/staging.php:29
+msgid ""
+"When you copy from staging to live, all data and files of your live website "
+"will be overwritten. This includes recently added posts, pages, media "
+"uploads and files."
+msgstr ""
+"Cuando hace una copia de la página de prueba a la publicada, se "
+"sobrescribirán todos los archivos de su página web publicada, incluidas las "
+"publicaciones, páginas, archivos multimedia y otro tipo de archivos que haya "
+"añadido recientemente."
+
+#: staging/Includes/Core/views/staging.php:30
+msgid ""
+"It can take a couple of minutes for the copy to finish, so please do not "
+"close or navigate away from this page."
+msgstr ""
+"La copia puede tardar un par de minutos, así que no cierre esta página ni "
+"navegue a otra hasta que se haya completado el proceso."
+
+#: staging/Includes/Core/views/staging.php:34
+msgid "Copy staging to live"
+msgstr "Copiar de la página de prueba a la página publicada"
+
+#: staging/Includes/Core/views/staging.php:39
+msgid "Live website details not found. Can not copy staging into live!"
+msgstr ""
+
+#: staging/one_staging.php:147
+msgid "Status"
+msgstr ""
+
+#: staging/one_staging.php:148
+msgid "Response"
+msgstr ""
+
+#: staging/one_staging.php:149
+msgid "Copied successfully."
+msgstr "Página de prueba creada con éxito."
+
+#: staging/one_staging.php:150
+#, fuzzy
+#| msgid "Something went wrong. Please contact the support at One.com."
+msgid "Something went wrong; please try again."
+msgstr ""
+"Algo salió mal. Póngase en contacto con el servicio de asistencia de One.com."
+
+#: staging/one_staging.php:154
+msgid "Preparing..."
+msgstr "Preparando…"
+
+#: staging/one_staging.php:155
+msgid "Start copying..."
+msgstr "Iniciando copia…"
+
+#: staging/one_staging.php:156
+msgid "Copying database..."
+msgstr "Copiando base de datos…"
+
+#: staging/one_staging.php:157
+msgid "Preparing directories..."
+msgstr "Preparando directorios…"
+
+#: staging/one_staging.php:158
+msgid "Copying files..."
+msgstr "Copiando archivos…"
+
+#: staging/one_staging.php:159
+msgid "Updating database..."
+msgstr "Actualizando base de datos…"
+
+#: staging/one_staging.php:160
+msgid "Finalising..."
+msgstr "Finalizando…"
+
+#: staging/one_staging.php:161
+msgid "Finished!"
+msgstr "Finalizado"
+
+#: staging/one_staging.php:162
+#, fuzzy
+#| msgid "Delete Staging"
+msgid "Deleting staging..."
+msgstr "Eliminar página de prueba"
+
+#: templates/discouraged-plugin-listing.php:13
+#: templates/discouraged-plugin-listing.php:25 templates/plugin-listing.php:25
+#: templates/recommended-plugin-listing.php:25
+msgid "Discouraged plugins"
+msgstr "Plugins no recomendados"
+
+#: templates/discouraged-plugin-listing.php:23
+#: templates/network/plugin-listing.php:23
+#: templates/network/recommended-plugin-listing.php:23
+#: templates/plugin-listing.php:23 templates/recommended-plugin-listing.php:23
+msgid "One.com plugins"
+msgstr "Plugins de One.com"
+
+#: templates/discouraged-plugin-listing.php:24
+#: templates/network/plugin-listing.php:24
+#: templates/network/recommended-plugin-listing.php:24
+#: templates/plugin-listing.php:24 templates/recommended-plugin-listing.php:24
+msgid "Recommended plugins"
+msgstr "Plugins recomendados"
+
+#: templates/discouraged-plugin-listing.php:58
+msgid ""
+"You are doing great! None of your installed plugins, are on our list of "
+"discouraged plugins."
+msgstr ""
+"¡Lo está haciendo muy bien! Ningún de los plugins que tiene instalados se "
+"encuentra en nuestra lista de plugins no recomendados."
+
+#: templates/discouraged-plugin-listing.php:60
+msgid ""
+"Your WordPress site should work the best possible way. We checked the "
+"plugins on your website, and listed those we don't recommended you to use."
+msgstr ""
+"Su sitio web en WordPress debería funcionar perfectamente. De hecho, hemos "
+"revisado los plugins en su sitio web y enumerado aquellos que no le "
+"recomendamos que utilice."
+
+#: templates/discouraged-plugin-listing.php:60
+msgid "There are also some suggestions for alternative plugins to use instead."
+msgstr "Le indicamos además plugins alternativos que podrá usar en su lugar."
+
+#: templates/discouraged-plugin-listing.php:63
+msgid "View full list of discouraged plugins"
+msgstr "Vea la lista completa de plugins no recomendados"
+
+#: templates/discouraged-plugin-listing.php:79
+msgid "Deactivate"
+msgstr "Desactivar"
+
+#: templates/discouraged-plugin-listing.php:88
+msgid "Suggested alternative"
+msgstr "Alternativa sugerida"
+
+#: templates/discouraged-plugin-listing.php:88
+msgid "Suggested alternatives"
+msgstr "Alternativas sugeridas"
+
+#: templates/discouraged-plugin-listing.php:117
+msgid "Yes, deactivate plugin"
+msgstr "Sí, desactivar plugin"
+
+#: templates/discouraged-plugin-listing.php:117
+msgid "Not right now"
+msgstr "No en este momento"
+
+#: templates/discouraged-plugin-listing.php:119
+msgid "Are you sure that you want to deactivate this plugin?"
+msgstr "¿Está seguro de que desea desactivar este plugin?"
+
+#: templates/discouraged-plugin-listing.php:121
+msgid "Deactivating a plugin can break functionality on your website."
+msgstr ""
+"Si desactiva un plugin podría alterar o romper la funcionalidad de su sitio "
+"web."
+
+#: templates/network/plugin-listing.php:13 templates/plugin-listing.php:13
+msgid "Plugins that bring the One.com experience and services to WordPress."
+msgstr "Plugins que aportan la experiencia y servicios de One.com a WordPress."
+
+#: templates/network/plugin-listing.php:83
+#: templates/network/recommended-plugin-listing.php:97
+#: templates/network/theme-listing-loop.php:67 templates/plugin-listing.php:83
+#: templates/recommended-plugin-listing.php:97
+#: templates/theme-listing-loop.php:64
+msgid "Active"
+msgstr "Activar"
+
+#: templates/network/plugin-listing.php:91
+#: templates/network/recommended-plugin-listing.php:101
+#: templates/plugin-listing.php:91 templates/recommended-plugin-listing.php:101
+msgid "Install now"
+msgstr "Instalar ahora"
+
+#: templates/network/recommended-plugin-listing.php:13
+#: templates/recommended-plugin-listing.php:13
+msgid "Presenting some of our favorite WordPress plugins, curated for quality."
+msgstr ""
+"Le presentamos algunos de nuestros plugins favoritos de WordPress, "
+"especialmente seleccionados por su calidad."
+
+#: templates/network/recommended-plugin-listing.php:109
+#: templates/recommended-plugin-listing.php:109
+msgid "More details"
+msgstr "Más información"
+
+#: templates/network/recommended-plugin-listing.php:116
+#: templates/recommended-plugin-listing.php:116
+msgid "By"
+msgstr "Por"
+
+#: templates/network/theme-listing-loop.php:49
+#: templates/theme-listing-loop.php:42
+msgid "Preview"
+msgstr "Vista previa"
+
+#: templates/network/theme-listing-loop.php:82
+#: templates/network/theme-listing.php:87 templates/theme-listing-loop.php:79
+#: templates/theme-listing.php:87
+msgid "Install"
+msgstr "Instalar"
+
+#: templates/network/theme-listing.php:14 templates/theme-listing.php:14
+msgid "Exclusive themes specially crafted for One.com customers."
+msgstr ""
+"Temas exclusivos desarrollados especialmente para los clientes de One.com."
+
+#: templates/network/theme-listing.php:83 templates/theme-listing.php:83
+msgid "Back to themes"
+msgstr "Volver a los temas"
+
+#: templates/network/theme-listing.php:90 templates/theme-listing.php:90
+msgid "Desktop"
+msgstr "Sobremesa"
+
+#: templates/network/theme-listing.php:91 templates/theme-listing.php:91
+msgid "Mobile"
+msgstr "Móvil"
+
+#~ msgid "Presenting some of the best WordPress plugins, curated for quality."
+#~ msgstr ""
+#~ "Le presentamos algunos de los mejores plugins disponibles para WordPress, "
+#~ "seleccionados por su calidad."

@@ -1,0 +1,197 @@
+/* typography */
+.button,
+input[type=submit],
+.onecom-webshop-main .button.button-back,
+.onecom-webshop-main .product .info .button-addtocart,
+.onecom-webshop-main .button,
+.onecom-webshop-main .button.button-checkout,
+.onecom-webshop-main .button.button-continue,
+.onecom-webshop-main .button.button-seemore{
+    font-size:16px;
+    font-style: normal;
+    font-weight:normal;
+    background: rgba(255,255,255,0.7);
+    padding: 22px 10px;
+    width:300px;
+    outline:none !important;
+
+}
+.onecom-webshop-main .button.button-back,
+.onecom-webshop-main .product .info .button-addtocart,
+.onecom-webshop-main .button,
+.onecom-webshop-main .button.button-checkout,
+.onecom-webshop-main .button.button-continue,
+.onecom-webshop-main .button.button-seemore{
+    min-height: auto !important;
+    height:auto !important;
+}
+
+.button.border{
+    border:1px solid #000;
+}
+.button.medium,
+.cta-content .button{
+    width:200px;
+    padding: 21px 10px;
+}
+input[type=submit]{
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    width: auto;
+    padding: 14px 31px;
+    border-width:0;
+    border-style:solid;
+    border-color: #000;
+    /*border: 1px solid #000;*/
+    font-size: 16px;
+    font-weight: normal;
+    transition: 0.2s;
+}
+form#commentform #submit{
+    border:1px solid #000000;
+}
+section.background input[type=submit]{
+    background-color:rgba(255,255,255,0.8);
+}
+input[type=submit]:not(.searchform input[type=submit]):hover,
+input[type=submit]:focus,
+input[type=submit]:active{
+    background: #000;
+    color: #fff;
+}
+
+.comment-reply-link{
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    width: auto;
+    padding: 5px 20px;
+    line-height:1;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    transition: background-color .2s ease-out,border .2s ease-out,color .2s ease-out;
+    cursor: pointer;
+    border:1px solid #000;
+    border-radius: 60px;
+    text-decoration: none;
+}
+
+.comment-reply-link:hover{
+    background: #fff;
+    border:1px solid #000;
+    color: #000;
+}
+
+#site-header{
+    min-height:90px;
+}
+.no-banner #site-header{
+    box-shadow: 0 0 7px rgba(0,0,0,0.23);
+}
+.site-logo{
+    margin:11px 0;
+    display:inline-block;
+}
+#primary-nav ul li a{
+    font-family: "Arimo","One Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+#primary-nav{
+    margin-top:30px;
+}
+.banner-caption h1,
+.banner-caption h2,
+.internal-banner h1,
+.internal-banner h2{
+    color:inherit;
+    font-size:70px;
+    line-height:70px;
+    font-weight:700;
+    margin-bottom:0;
+    /*-ms-word-break:break-word;
+    word-break:break-word;*/
+}
+.internal-banner .banner-caption h1,
+.internal-banner .banner-caption h2{
+    text-transform: uppercase;
+}
+.home-banner .banner-caption h2{margin-bottom:15px;}
+.home-banner .banner-button .button{
+    min-width:340px;
+    padding:21px 10px;
+}
+.banner-caption .sub-title{
+    font-size:26px;
+    line-height:26px;
+    font-weight:normal;
+}
+.banner-caption .sub-title p{
+    font:inherit;
+    color: inherit;
+    line-height:inherit;
+    font-weight:inherit;
+}
+
+.banner-caption .banner-button{
+    margin-top: 50px;
+}
+.section-columns {
+    margin: 80px 0 20px;
+}
+.cta-content {
+    padding: 40px 20px 32px;
+}
+.cta-content h3{
+    font-size:30px;
+    margin-bottom:0;
+}
+.cta-content .button{
+    margin-top:22px;
+}
+.feature-text h4{
+    font-size: 30px;
+}
+.section-button .button{
+    width:320px;
+    padding:21px 11px;
+}
+.testimonial blockquote{
+    font-size: 18px;
+    line-height:1.8;
+}
+.testimonial cite{
+    font-size:30px;
+}
+.footer-logo.site-logo .site-title{
+    font-size:28px;
+    font-weight:normal;
+}
+.field-block h5.cursive-font {
+    font-size: 30px;
+    margin-bottom: 8px;
+    line-height:54px;
+}
+.cpt-custom-fields{
+    font-size: 18px;
+}
+.cpt-custom-fields{
+    margin-top:0;
+}
+.widget_cta_banner .button{
+    text-align: left;
+    background: transparent;
+    line-height:1.8;
+    font-weight:bold;
+}
+.event .event-date{
+    font-weight:normal;
+    font-size:18px;
+}
+.event .event-date .day sup{
+    font-size:24px;
+    font-weight:bold;
+    margin-left: 4px;
+}
+.onecom-webshop-main .checkout .button-continue-payment a{max-width:calc( 100% - 20px) !important;}
+.onecom-webshop-main .button.button-continue, .onecom-webshop-main .button.ok { padding: 22px 10px;}
