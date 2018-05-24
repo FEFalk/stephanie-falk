@@ -18,6 +18,8 @@
     <?php include(TEMPLATEPATH . '/assets/css/header-css.php'); ?>
 
     <link rel='stylesheet' id='responsive-css'  href='<?php echo get_parent_theme_file_uri('assets/css/responsive.css').'?ver='.THM_VER; ?> 'type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css'  href='<?php echo get_parent_theme_file_uri('assets/css/style.css').'?ver='.THM_VER; ?> 'type='text/css' media='all' />
+
 
     <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
 </head>

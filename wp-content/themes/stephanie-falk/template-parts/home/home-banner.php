@@ -13,27 +13,30 @@
         ?>
 
         <?php if( $home_banner_switch != 'off' && (strlen($banner_caption_title) || strlen($banner_caption_subtitle) || strlen($banner_button_label) || strlen($home_banner_image))): ?>
-            <section class="banner home-banner <?php echo $banner_height; ?> " role="banner" style="background-image:url(<?php echo $home_banner_image; ?>);">
-                <div class="container banner-content  <?php echo $banner_align; ?>">
-                    <div class="banner-caption text-center">
+            <div class="video-container">
+                <video autoplay muted loop class="banner home-banner <?php echo $banner_height; ?> " id="homeVideo">
+                    <source src=".\wp-content\uploads\2018\05\barcelona.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="container banner-content  <?php echo $banner_align; ?>">
+                <div class="banner-caption text-center">
 
-                        <?php if(strlen($banner_caption_title)): ?>
-                            <h2><?php echo $banner_caption_title; ?></h2>
-                        <?php endif; ?>
+                    <?php if(strlen($banner_caption_title)): ?>
+                        <h2><?php echo $banner_caption_title; ?></h2>
+                    <?php endif; ?>
 
-                        <?php onecom_edit_icon('page_meta', '#setting_home_banner', get_the_ID()); ?>
+                    <?php onecom_edit_icon('page_meta', '#setting_home_banner', get_the_ID()); ?>
 
-                        <?php if(strlen($banner_caption_subtitle)): ?>
-                            <div class="sub-title cursive-font"><?php echo $banner_caption_subtitle; ?></div>
-                        <?php endif; ?>
+                    <?php if(strlen($banner_caption_subtitle)): ?>
+                        <div class="sub-title cursive-font"><?php echo $banner_caption_subtitle; ?></div>
+                    <?php endif; ?>
 
-                        <?php if(strlen($banner_button_label)): ?>
-                            <div class="banner-button">
-                                <a href="<?php echo $banner_link; ?>" class="button"><?php echo $banner_button_label; ?></a>
-                            </div>
-                        <?php endif; ?>
+                    <?php if(strlen($banner_button_label)): ?>
+                        <div class="banner-button">
+                            <a href="<?php echo $banner_link; ?>" class="button"><?php echo $banner_button_label; ?></a>
+                        </div>
+                    <?php endif; ?>
 
-                    </div>
                 </div>
-            </section>
+            </div>
         <?php endif; ?>

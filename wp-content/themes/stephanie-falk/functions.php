@@ -149,8 +149,8 @@ function onecom_theme_assets(){
 function register_my_menus() {
 	register_nav_menus(
 		array(
-            'primary_yoga' => 'Primary - Yoga',
-            'mobile_yoga' => 'Mobile Menu - Yoga',
+            'primary_yoga' => 'Primary',
+            'mobile_yoga' => 'Mobile Menu',
         )
 	);
 }
