@@ -28,3 +28,7 @@ wp-content/themes/twentyseventeen/
 wp-content/themes/twentysixteen/
 
 local-config\.php
+
+node_modules/
+
+web\.config

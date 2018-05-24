@@ -1,0 +1,23 @@
+{
+"version": "2.0.0",
+"tasks": [
+    {
+        "label": "Start server and process files",
+        "command": "gulp",
+        "args": [
+            "default"
+        ],
+        "type": "shell",
+        "options": {
+            "cwd": "${workspaceRoot}"
+        }
+    },
+    {
+        "type": "gulp",
+        "task": "default",
+        "problemMatcher": [
+            "$eslint-compact"
+        ]
+    }
+]
+}
