@@ -16,27 +16,27 @@
 
 
     <!--- START White-Solid Section --->
-    <?php get_template_part('template-parts/home/section', 'courses'); ?>
+    <?php get_template_part('template-parts/home/section', 'about'); ?>
     <!--- END White-Solid Section --->
 
 
     <!--- START Features Section --->
-    <?php get_template_part('template-parts/home/section', 'features'); ?>
+    <?php get_template_part('template-parts/home/section', 'instagram'); ?>
     <!--- END Features Section --->
 
 
     <!--- START BG Section --->
-    <?php get_template_part('template-parts/home/section', 'appointment'); ?>
+    <?php get_template_part('template-parts/home/section', 'gallery'); ?>
     <!--- END BG Section --->
 
 
     <!--- START Testimonial Section --->
-    <?php get_template_part('template-parts/home/section', 'testimonials'); ?>
+    <?php //get_template_part('template-parts/home/section', 'testimonials'); ?>
     <!--- END Testimonial Section --->
 
 
     <!--- START Newsletter Section --->
-    <?php get_template_part('template-parts/home/section', 'newsletter'); ?>
+    <?php get_template_part('template-parts/home/section', 'contact'); ?>
     <!--- END Newsletter Section --->
 
 <?php get_footer(); ?>

@@ -1,13 +1,15 @@
 #site-header {
   background-color: transparent !important;
   position: absolute;
-  width: 100%;
-  border-bottom: 1px solid #ebebeb;
-  border-bottom-color: rgba(255, 255, 255, 0.31) !important; }
+  width: 100%; }
   #site-header #primary-nav ul li a {
     background-color: transparent; }
   #site-header #primary-nav ul li.current_page_item a {
     background-color: transparent; }
+  #site-header .nav-container {
+    margin: 0 auto;
+    border-bottom: 1px solid #ebebeb;
+    border-bottom-color: rgba(255, 255, 255, 0.31) !important; }
 
 .video-container {
   width: 100%;

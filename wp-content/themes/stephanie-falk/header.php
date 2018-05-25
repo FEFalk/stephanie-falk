@@ -33,27 +33,8 @@
         <header id="site-header" role="header">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="menu-toggle mobile-only" aria-controls="sticky_menu" aria-expanded="false">Menu</button>
-                        <?php if('off' != ot_get_option('logo_switch')): ?>
-                            <div class="site-logo">
-                                <h1 class="site-title">
-                                    <a href="<?php echo home_url('/'); ?>" rel="home">
-                                        <?php $logo = ot_get_option('logo_img');
-                                            if(strlen($logo)){
-                                                printf('<img src="%s" alt="%s" role="logo" />', $logo, get_bloginfo('name'));
-                                            }
-                                            else{
-                                                echo break_page_title(get_bloginfo('title'));
-                                            }
-                                        ?>
-                                    </a>
-                                </h1>
-                            </div>
-                            <!-- END logo container -->
-                        <?php endif; ?>
-                    </div>
-                    <div class="col-md-8 desktop-only">
+
+                    <div class="nav-container desktop-only">
                         <!-- START nav container -->
                         <nav class="nav primary-nav" id="primary-nav" role="navigation">
                             <?php

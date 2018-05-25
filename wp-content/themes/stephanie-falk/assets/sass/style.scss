@@ -2,13 +2,17 @@
     background-color: transparent !important;
     position: absolute;
     width: 100%;
-    border-bottom: 1px solid #ebebeb;
-    border-bottom-color: rgba(255, 255, 255, 0.31) !important;
     #primary-nav ul li a {
         background-color: transparent;
     }
     #primary-nav ul li.current_page_item a {
         background-color: transparent;
+    }
+
+    .nav-container{
+        margin: 0 auto;
+        border-bottom: 1px solid #ebebeb;
+        border-bottom-color: rgba(255, 255, 255, 0.31) !important;
     }
 }
 
