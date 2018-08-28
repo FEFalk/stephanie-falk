@@ -17,7 +17,11 @@
         "task": "default",
         "problemMatcher": [
             "$eslint-compact"
-        ]
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
     }
 ]
 }
