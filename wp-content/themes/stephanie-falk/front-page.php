@@ -20,13 +20,17 @@
     <!--- END White-Solid Section --->
 
 
-    <!--- START Features Section --->
+    <!--- START Instagram Section --->
     <?php get_template_part('template-parts/home/section', 'instagram'); ?>
-    <!--- END Features Section --->
+    <!--- END Instagram Section --->
+
+    <!--- START Treatments Section --->
+        <?php get_template_part('template-parts/home/section', 'treatments'); ?>
+    <!--- END Treatments Section --->
 
 
     <!--- START BG Section --->
-    <?php get_template_part('template-parts/home/section', 'gallery'); ?>
+    <?php //get_template_part('template-parts/home/section', 'gallery'); ?>
     <!--- END BG Section --->
 
 

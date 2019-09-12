@@ -14,17 +14,10 @@
 ?>
 
 <?php if ($home_courses_switch != 'off' && (strlen($courses_section_title) || strlen($courses_section_content) || !empty($home_courses_ids))): ?>
-<section class="section solid white-bg text-center">
+<section class="section solid white-bg text-center" id="about-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="section-title">
-                    <h2>
-                        <?php echo get_the_title($page); ?>
-                        <?php onecom_edit_icon('page_meta', '#setting_home_courses', get_the_ID()); ?>
-
-                    </h2>
-                </div>
                 <div class="section-content">
                     <?php echo $page->post_content; ?>
                 </div>
@@ -32,5 +25,11 @@
 
         </div>
     </div>
+    <div class="sax-poly">
+        <?php echo file_get_contents(wp_get_upload_dir()["basedir"] . '\2018\05\sax.svg'); ?>
+
+
+    </div>
+    <div class="overlay"></div>
 </section>
 <?php endif;

@@ -104,6 +104,7 @@ function onecom_theme_assets(){
     }
 
     wp_register_script('custom-js', THM_DIR_URI . '/assets/'.$resource_min_dir.'js/z-custom'.$resource_extension.'.js', array( 'jquery'), THM_VER, true );
+    wp_register_script('instagram-js', THM_DIR_URI . '/assets/'.$resource_min_dir.'js/instagram'.$resource_extension.'.js', array( 'jquery'), THM_VER, true );
 	wp_register_script( 'script-yoga-all', THM_DIR_URI . '/assets/min-js/script.min.js', array('jquery'), THM_VER, true );
 
 
@@ -245,6 +246,15 @@ function onecom_widgets_init() {
         'before_title' => '<div class="widget-title"><h4>',
         'after_title' => '</h4></div>',
     ));
+    register_sidebar(array(
+        'name' => 'Tag Cloud',
+        'id' => 'tag_cloud',
+        'description' => 'This widget area shows the widgets in Tag Cloud-area',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
 }
 add_action( 'widgets_init', 'onecom_widgets_init' );
 
@@ -331,3 +341,143 @@ add_action( 'pt-ocdi/after_import', 'ocdi_after_import_setup' );
  * Include API hook file
  **/
 include_once trailingslashit( get_template_directory() ).'inc/api-hooks.php';
+
+
+// function my_scripts_method() {
+//     wp_register_script(
+//         'instagram',
+//         get_template_directory_uri() . '/assets/js/instagram.js',
+//         array('jquery')     );
+//     wp_enqueue_script('instagram');
+//     wp_localize_script( 'instagram', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) ); 
+
+// }
+// add_action('wp_enqueue_scripts', 'my_scripts_method');
+
+
+function update_instagram_posts(){
+    $tags = json_decode(stripslashes($_POST['tags']));
+
+    //TODO: PARRSE TAGS TO ARRAY AND FILTER BY IT
+
+    //$tagsArray = implode(',', $tags);
+
+    $query = '';
+
+    // foreach($tags as $tag){
+    //     echo print_r($tag);
+
+    // }
+
+    
+
+
+
+    $paramsArray = ['operator' => 'AND'];
+    foreach($tags as $key => $value)
+    {
+        array_push($paramsArray, array(  
+            'taxonomy'  => 'hashtag',
+            'field'     => 'slug',
+            'terms'     => $value
+        ));
+    }
+    //echo print_r($paramsArray);
+    //echo $query;
+
+    $param = array(
+        'limit'     =>  15,
+        'orderby'   =>  'date DESC',
+        'tax_query'      => $paramsArray,
+        'post_type' => 'instagram-post',
+        'posts_per_page' => 15
+    );
+    $the_query = new WP_Query( $param );
+
+    //$instagram_posts = pods('instagram-post', $param);
+
+    //echo print_r($instagram_posts);
+    
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            echo get_the_content();
+        }
+    }
+
+    // if (0 < $instagram_posts->total()) {
+    //     while ($instagram_posts->fetch()) {
+    //         echo $instagram_posts->field('post_content');
+    //     }
+    // }
+    //return 'test';
+    wp_die();
+}
+add_action('wp_ajax_update_instagram', 'update_instagram_posts');
+add_action('wp_ajax_nopriv_update_instagram', 'update_instagram_posts');
+
+function loadmore_instagram_posts(){
+    $tags = json_decode(stripslashes($_POST['tags']));
+    $page = stripslashes($_POST['page']);
+
+    echo $page;
+
+    //TODO: PARRSE TAGS TO ARRAY AND FILTER BY IT
+
+    //$tagsArray = implode(',', $tags);
+
+    $query = '';
+
+    // foreach($tags as $tag){
+    //     echo print_r($tag);
+
+    // }
+
+    
+
+
+
+    $paramsArray = ['operator' => 'AND'];
+    foreach($tags as $key => $value)
+    {
+        array_push($paramsArray, array(  
+            'taxonomy'  => 'hashtag',
+            'field'     => 'slug',
+            'terms'     => $value
+        ));
+    }
+    //echo print_r($paramsArray);
+    //echo $query;
+
+    $param = array(
+        'limit'     =>  15,
+        'orderby'   =>  'date DESC',
+        'tax_query'      => $paramsArray,
+        'post_type' => 'instagram-post',
+        'page' => $page,
+        'offset' => $page * 15,
+        'posts_per_page' => 15
+    );
+    $the_query = new WP_Query( $param );
+
+    //$instagram_posts = pods('instagram-post', $param);
+
+    //echo print_r($instagram_posts);
+    
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            echo get_the_content();
+        }
+    }
+
+    // if (0 < $instagram_posts->total()) {
+    //     while ($instagram_posts->fetch()) {
+    //         echo $instagram_posts->field('post_content');
+    //     }
+    // }
+    //return 'test';
+    wp_die();
+}
+add_action('wp_ajax_loadmore_instagram', 'loadmore_instagram_posts');
+add_action('wp_ajax_nopriv_loadmore_instagram', 'loadmore_instagram_posts');

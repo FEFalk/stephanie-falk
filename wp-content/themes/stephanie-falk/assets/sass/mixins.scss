@@ -1,0 +1,28 @@
+// Generates util classes for padding and margin.
+@mixin generate-distance-classes {
+    $directions: ( v: ( -top, -bottom ), h: ( -right, -left ), vbottom: ( -bottom ), vtop: ( -top ), hright: ( -right ), hleft: ( -left ) );
+
+    @for $i from 0 through 24 {
+        .padding {
+            @each $dir, $rules in $directions {
+                &-#{$dir}-#{$i * 5} {
+                    @each $rule in $rules {
+                        padding#{$rule}: #{$i * 5}px;
+                    }
+                }
+            }
+        }
+
+        .margin {
+            @each $dir, $rules in $directions {
+                &-#{$dir}-#{$i * 5} {
+                    @each $rule in $rules {
+                        margin#{$rule}: #{$i * 5}px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+    
