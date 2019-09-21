@@ -21,11 +21,10 @@
                                 <i class="fas fa-filter filter-icon"></i>
                                 <p class="filter-text">Filtrera</p>
                             </div>
-                            <?php echo do_shortcode('[tag_groups_accordion orderby=count smallest=9 largest=30 show_not_assigned=1 inner_div_class="tags-container" header_class="tag-group"]'); ?>
+                            <?php echo do_shortcode('[tag_groups_accordion orderby=count smallest=9 largest=30 inner_div_class="tags-container" header_class="tag-group"]'); ?>
                         </div>
-                        <!-- <div class="active-tags-container">
-                            <span class="close-button" id="close-filters"></span>
-                        </div> -->
+
+                        <p class="filter-text-error">Inga bilder med den valda kombinationen kategorier hittades. Försök igen.</p>
                         <div class="grid" id="instagram-grid" data-page="1">
                             <div class="grid-sizer"></div>
                             <div class="gutter-sizer"></div>
@@ -37,14 +36,7 @@
                                 $instagram_posts = pods('instagram-post', $param);
                                 if (0 < $instagram_posts->total()) {
                                     while ($instagram_posts->fetch()) {
-                                        ?>
-                                        <div class="grid-item-container">
-                                        <?php
-                                            echo $instagram_posts->field('post_content');
-                                        ?>
-                                            <div class="instagram-text"><?php echo $instagram_posts->field('post_title'); ?></div>
-                                        </div>
-                                    <?php
+                                        echo $instagram_posts->field('post_content');
                                     }
                                 }
                             ?>

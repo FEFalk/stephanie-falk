@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
     <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
+    <meta name="google-site-verification" content="fk793QaDIuO3zY-1VwEsZ9UPqzbVkXWICYurm_cxtJo" />
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,6 +36,44 @@
             <div class="container">
                 <div class="row">
 
+                    <div class="nav-container mobile-only">
+                        <!--    Made by Erik Terwan    -->
+                        <!--   24th of November 2015   -->
+                        <!--        MIT License        -->
+                        <nav role="navigation">
+                            <div id="menuToggle">
+                                <!--
+                                A fake / hidden checkbox is used as click reciever,
+                                so you can use the :checked selector on it.
+                                -->
+                                <input type="checkbox" />
+                                
+                                <!--
+                                Some spans to act as a hamburger.
+                                
+                                They are acting like a real hamburger,
+                                not that McDonalds stuff.
+                                -->
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                
+                                <!--
+                                Too bad the menu has to be inside of the button
+                                but hey, it's pure CSS magic.
+                                -->
+                                <?php
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'primary_yoga',
+                                        'container' => '',
+                                        'fallback_cb' => 'onecom_add_nav_menu',
+                                    )
+                                );
+                            ?>
+                            </div>
+                        </nav>
+                    </div>
                     <div class="nav-container desktop-only">
                         <!-- START nav container -->
                         <nav class="nav primary-nav" id="primary-nav" role="navigation">

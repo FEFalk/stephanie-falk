@@ -74,101 +74,14 @@
                             </div>
                         </div>
                         <?php if (get_post_meta(get_the_ID(), 'booking_sec_switch', true) != 'off'): ?>
-                        <section class="section background col-md-6" id="contact-form" style="background-image: url(<?php echo get_section_background_image('booking_section_bg'); ?>); ">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="section-title">
-                                            <h2>
-                                                <?php echo get_post_meta($page->ID, 'booking_section_title', true); ?>
-                                            </h2>
-                                        </div>
-
-                                        <?php
-                          $booking_form_embed =   get_post_meta($page->ID, 'booking_form_embed', true);
-                          $custom_form_switch =   get_post_meta($page->ID, 'custom_form_switch', true);
-                        ?>
-
-                                        <?php if (strlen(trim($booking_form_embed)) && $custom_form_switch == 'on') {
-                            ?>
-
-                                        <?php echo do_shortcode($booking_form_embed); ?>
-
-                                        <?php
-                        } else {
-                            ?>
-
-                                        <div class="form-container contact-form">
-                                            <form id="booking_form" class="form text-left" role="form">
-                                                <fieldset>
-                                                    <?php
-                                            $label_1 = get_post_meta($page->ID, 'form_label_1', true);
-                            $label_1 = (isset($label_1) && strlen($label_1))? $label_1 : __("Email", "upsurge"); ?>
-                                                    <label>
-                                                        <?php echo $label_1; ?>*</label>
-                                                    <input type="email" class="input booking_email" maxlength="120" required />
-                                                    <input type="hidden" name="label_1" id="label_1" value="<?php echo $label_1; ?>"
-                                                    />
-                                                </fieldset>
-                                                <fieldset>
-                                                    <?php
-                                            $label_2 = get_post_meta($page->ID, 'form_label_2', true);
-                            $label_2 = (isset($label_2) && strlen($label_2))? $label_2 : __("Name", "upsurge"); ?>
-                                                    <label>
-                                                        <?php echo $label_2; ?>*</label>
-                                                    <input type="text" class="input booking_name" maxlength="120" required />
-                                                    <input type="hidden" name="label_2" id="label_2" value="<?php echo $label_2; ?>"
-                                                    />
-                                                </fieldset>
-                                                <fieldset>
-                                                    <?php
-                                            $label_3 = get_post_meta($page->ID, 'form_label_3', true);
-                            $label_3 = (isset($label_3) && strlen($label_3))? $label_3 : __("Message", "upsurge"); ?>
-                                                    <label>
-                                                        <?php echo $label_3; ?>*</label>
-                                                    <textarea rows="10" cols="50" class="input booking_msg" name="message" required></textarea>
-                                                    <input type="hidden" name="label_3" id="label_3" value="<?php echo $label_3; ?>"
-                                                    />
-                                                </fieldset>
-
-                                                <?php
-                                        /* Subject of the contact email */
-                                        $subject = get_post_meta($page->ID, 'cmail_subject', true);
-
-                            if (!isset($subject) && !strlen($subject)) {
-                                /* Set default if not subject saved from admin */
-                                $subject = 'Booking Query From '.get_bloginfo('name');
-                            }
-
-                            $contact_recipient = get_post_meta($page->ID, 'recipient_email', true);
-                            if (!isset($contact_recipient) && !strlen($contact_recipient)) {
-                                /* Set default recipient to Admin Email */
-                                $contact_recipient = get_option('admin_email');
-                            } ?>
-                                                <input type="hidden" name="contact_subject" id="contact_subject" value="<?php echo $subject; ?>"
-                                                />
-                                                <input type="hidden" name="contact_recipient" id="contact_recipient" value="<?php echo $contact_recipient; ?>"
-                                                />
-
-                                                <fieldset>
-                                                    <?php wp_nonce_field('booking_form', 'validate_nonce'); ?>
-                                                    <?php $label_4 = get_post_meta($page->ID, 'form_label_4', true); ?>
-                                                    <input type="submit" class="submit button small pull-right" value="<?php echo((isset($label_4) && strlen($label_4))? $label_4 : __('SEND MESSAGE', 'yoga')); ?>"
-                                                        name="booking-submit" />
-                                                </fieldset>
-                                                <fieldset>
-                                                    <div class="form_message"></div>
-                                                </fieldset>
-                                            </form>
-                                        </div>
-
-                                        <?php
-                        } ?>
-
-                                    </div>
-                                </div>
+                        <div class="background col-md-6" id="contact-form" style="background-image: url(<?php echo get_section_background_image('booking_section_bg'); ?>); ">
+                            <div class="section-title">
+                                <h2>
+                                    <?php echo get_post_meta($page->ID, 'booking_section_title', true); ?>
+                                </h2>
                             </div>
-                        </section>
+                            <?php echo do_shortcode('[contact-form-7 id="34588" title="Kontaktformulär 1"]');?>
+                        </div>
                         <?php endif; ?>
                     </div>
                     <?php endif; ?>
@@ -179,8 +92,8 @@
 
         </div>
     </div> 
+    
 </section>
-
     <?php endif; ?>
     <div class="col-md-12 no-padding" id="map-section">
         <div class="section-title text-center col-md-12">

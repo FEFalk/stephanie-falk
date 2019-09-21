@@ -6,6 +6,14 @@ html {
   position: fixed;
   z-index: 100;
   width: 100%; }
+  @media screen and (max-width: 39.9375em) {
+    #site-header {
+      min-height: 0 !important; }
+      #site-header .container {
+        height: 0;
+        padding: 0; }
+        #site-header .container > .row {
+          height: 0; } }
   #site-header #primary-nav ul li a {
     background-color: transparent;
     color: white;
@@ -23,6 +31,102 @@ html {
     border-bottom-color: rgba(255, 255, 255, 0.31) !important;
     position: relative;
     z-index: 10; }
+
+.nav-container.mobile-only {
+  margin: 0 !important;
+  margin-left: -1rem !important;
+  /*
+     * Just a quick hamburger
+     */
+  /* 
+     * Transform all the slices of hamburger
+     * into a crossmark.
+     */
+  /*
+     * But let's hide the middle one.
+     */
+  /*
+     * Ohyeah and the last one should go the other direction
+     */
+  /*
+     * Make this absolute positioned
+     * at the top left of the screen
+     */
+  /*
+     * And let's slide it in from the left
+     */ }
+  .nav-container.mobile-only #menuToggle {
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 50px;
+    padding: 1rem;
+    border-radius: 3rem;
+    background: #0000008a;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none; }
+  .nav-container.mobile-only #menuToggle input {
+    display: block;
+    width: 65px;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none; }
+  .nav-container.mobile-only #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+  .nav-container.mobile-only #menuToggle span:first-child {
+    transform-origin: 0% 0%; }
+  .nav-container.mobile-only #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%; }
+  .nav-container.mobile-only #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323; }
+  .nav-container.mobile-only #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2); }
+  .nav-container.mobile-only #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px); }
+  .nav-container.mobile-only #menu-primary-yoga {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding-top: 125px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+  .nav-container.mobile-only #menu-primary-yoga li {
+    font-size: 1.4rem;
+    border-bottom: 1px solid #d1d1d1; }
+    .nav-container.mobile-only #menu-primary-yoga li:hover {
+      background: #fff5f5; }
+    .nav-container.mobile-only #menu-primary-yoga li a {
+      padding: 1rem 3rem;
+      display: inline-block;
+      width: 100%;
+      height: 100%; }
+  .nav-container.mobile-only #menuToggle input:checked ~ ul {
+    transform: none; }
 
 .section-title h1 {
   text-transform: uppercase;
@@ -73,10 +177,13 @@ html {
   width: 100%; }
   @media screen and (max-width: 39.9375em) {
     .banner-content .banner-caption {
-      width: 100%; }
+      width: 100%;
+      padding: 2rem !important; }
       .banner-content .banner-caption h2 {
-        font-size: 46px;
-        line-height: 46px; } }
+        font-size: 2.6rem;
+        line-height: 2.6rem; }
+      .banner-content .banner-caption .sub-title {
+        font-size: 1.4rem; } }
   .banner-content .banner-button a {
     border: solid rgba(255, 255, 255, 0.61) 1px;
     background: #00000091;
@@ -272,6 +379,9 @@ html {
     font-weight: 100;
     margin-right: 15px;
     font-size: 5rem; }
+    @media screen and (max-width: 39.9375em) {
+      #instagram-section .instagram-logo {
+        font-size: 3rem; } }
   #instagram-section #filter-button {
     display: flex;
     align-items: center;
@@ -311,6 +421,15 @@ html {
     width: 50%;
     background: url("../../assets/images/transition7.png");
     display: none; }
+    @media screen and (max-width: 39.9375em) {
+      #instagram-section .tag-groups-cloud {
+        width: 100%;
+        padding: 1rem 0; }
+        #instagram-section .tag-groups-cloud .tag-group {
+          padding: 0.2rem 0.6rem !important;
+          font-size: 1rem !important;
+          margin: 0.1rem !important;
+          text-transform: none !important; } }
     #instagram-section .tag-groups-cloud.loading {
       pointer-events: none;
       opacity: 0.5; }
@@ -348,6 +467,13 @@ html {
           margin-right: 0.4rem;
           font-size: 1.2rem;
           float: left; }
+  #instagram-section .filter-text-error {
+    color: #db3232;
+    font-size: 1.6rem;
+    display: none;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem; }
   #instagram-section .square {
     transform: scale(1.65); }
   @media screen and (max-width: 39.9375em) {
@@ -404,10 +530,16 @@ html {
 
 #contact-section {
   background: #fff5f5; }
-  #contact-section #contact-form {
-    padding: 0; }
-    #contact-section #contact-form .section-title {
-      padding-left: 17px; }
+  #contact-section #contact-form input:not([type="submit"]), #contact-section #contact-form label, #contact-section #contact-form textarea {
+    width: 100%; }
+  #contact-section #contact-form input[type="submit"] {
+    float: right;
+    padding: 0.5rem 2rem;
+    border: 1px solid #cccccc; }
+    #contact-section #contact-form input[type="submit"]:hover {
+      background: #ff9e9e;
+      color: black;
+      border: 1px solid #505050; }
   #contact-section p a {
     font-weight: bold; }
 

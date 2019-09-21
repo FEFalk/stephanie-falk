@@ -145,6 +145,13 @@
             //console.log(response);
             //var filteredItems = $('.grid-item').not($(items)).remove();
 
+            if(items.length == 0){
+                $('.grid-item').remove();
+                $('.filter-text-error').show();
+            }
+            else{
+                $('.filter-text-error').hide();
+            }
             if(items.length < 15)
                 $("#loadMoreButton").hide();
             else
