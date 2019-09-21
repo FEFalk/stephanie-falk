@@ -383,7 +383,7 @@ html {
       #instagram-section .instagram-logo {
         font-size: 3rem; } }
   #instagram-section #filter-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     font-size: 22px;
     border: solid white 1px;
