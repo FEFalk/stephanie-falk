@@ -26,7 +26,9 @@
         </div>
     </div>
     <div class="sax-poly">
-        <?php echo file_get_contents(wp_get_upload_dir()["basedir"] . '\2018\05\sax.svg'); ?>
+        <?php 
+            echo file_get_contents(wp_get_upload_dir()["baseurl"] . '/2018/05/sax.svg'); 
+        ?>
 
 
     </div>

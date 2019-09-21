@@ -46,6 +46,7 @@
                     </div>
                 </div>
             </div>
+        <div class="overlay reverse"></div>
         </section>
     <?php endif;
     

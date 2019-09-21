@@ -164,9 +164,12 @@ html {
   width: 100%;
   height: 90px;
   padding: 20px 10px;
-  background: url("../../assets/images/transition7.png");
+  background: url("../../assets/images/Transition7.png");
   background-position-y: bottom;
   margin-top: 90px; }
+  .overlay.reverse {
+    transform: rotate(180deg);
+    bottom: -90px; }
 
 .banner-content {
   position: absolute;
@@ -362,6 +365,7 @@ html {
     transform: scale(1.5); } }
 
 #instagram-section {
+  position: relative;
   background-color: black; }
   #instagram-section.loading #loadMoreButton {
     display: none; }
@@ -487,43 +491,45 @@ html {
     display: flex;
     align-items: center; }
 
-#treatments-section .treatments {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 1rem;
-  background: linear-gradient(0deg, #e4e4e4, #5757570f); }
-  @media screen and (min-width: 63.9375em) {
-    #treatments-section .treatments {
-      padding: 3rem; } }
-  #treatments-section .treatments .category-prices {
-    font-family: 'Montserrat';
-    padding: 0.6rem; }
+#treatments-section {
+  padding-top: 200px; }
+  #treatments-section .treatments {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: linear-gradient(0deg, #e4e4e4, #5757570f); }
     @media screen and (min-width: 63.9375em) {
-      #treatments-section .treatments .category-prices {
-        padding: 1.4rem; } }
-    #treatments-section .treatments .category-prices .category-name {
+      #treatments-section .treatments {
+        padding: 3rem; } }
+    #treatments-section .treatments .category-prices {
       font-family: 'Montserrat';
-      font-weight: normal;
-      text-decoration: underline; }
-  #treatments-section .treatments .treatment {
-    text-align: left;
-    background: #ffffff61;
-    padding: 0.5rem 1.4rem;
-    border-bottom: 1px solid #d0d0d0; }
-    #treatments-section .treatments .treatment .treatment-name {
-      font-family: Arimo;
+      padding: 0.6rem; }
+      @media screen and (min-width: 63.9375em) {
+        #treatments-section .treatments .category-prices {
+          padding: 1.4rem; } }
+      #treatments-section .treatments .category-prices .category-name {
+        font-family: 'Montserrat';
+        font-weight: normal;
+        text-decoration: underline; }
+    #treatments-section .treatments .treatment {
+      text-align: left;
+      background: #ffffff61;
+      padding: 0.5rem 1.4rem;
+      border-bottom: 1px solid #d0d0d0; }
+      #treatments-section .treatments .treatment .treatment-name {
+        font-family: Arimo;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: bold; }
+      #treatments-section .treatments .treatment .treatment-price {
+        font-size: 1.2em;
+        margin-top: -1rem;
+        margin-bottom: 0.4rem; }
+    #treatments-section .treatments h2 {
+      font-size: 1.6rem;
       text-transform: uppercase;
-      font-size: 1.2rem;
-      font-weight: bold; }
-    #treatments-section .treatments .treatment .treatment-price {
-      font-size: 1.2em;
-      margin-top: -1rem;
-      margin-bottom: 0.4rem; }
-  #treatments-section .treatments h2 {
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    margin: 0; }
+      margin: 0; }
 
 .hidden {
   opacity: 0 !important; }

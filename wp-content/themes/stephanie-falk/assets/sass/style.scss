@@ -228,9 +228,13 @@ html{
     width: 100%;
     height: 90px;
     padding: 20px 10px;
-    background: url('../../assets/images/transition7.png');
+    background: url('../../assets/images/Transition7.png');
     background-position-y: bottom;
     margin-top: 90px;
+    &.reverse{
+        transform: rotate(180deg);
+        bottom:-90px;
+    }
 }
 // .overlay::before{
 //     content: "";
@@ -492,7 +496,7 @@ $item-margin: 15px;
   }
   
 #instagram-section{
-
+    position: relative;
     &.loading{
         #loadMoreButton{
             display: none;
@@ -662,6 +666,7 @@ $item-margin: 15px;
 }
 
 #treatments-section{
+    padding-top:200px;
     .treatments{
         display:flex;
         flex-direction: row;
