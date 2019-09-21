@@ -14,6 +14,7 @@ import './style.scss';
 import './editor.scss';
 
 import Select from 'react-select';
+import apiFetch from '@wordpress/api-fetch';
 
 const { __ } = wp.i18n;
 
@@ -47,9 +48,9 @@ const {
 } = ChattyMangoTagGroupsGlobal;
 
 const helpUrl = 'https://documentation.chattymango.com/documentation/';
-const helpProduct = 'tag-groups';
+const helpProduct = 'tag-groups-premium';
 const helpComponent = 'tabbed-tag-cloud/tabbed-tag-cloud-parameters/';
-const logoUrl = pluginUrl + '/images/cm-tg-icon-64x64.png';
+const logoUrl = pluginUrl + '/assets/images/cm-tg-icon-64x64.png';
 
 
 class TagGroupsHelp extends Component {
@@ -185,14 +186,11 @@ class tagGroupsTabbedCloudParameters extends Component {
   */
   getGroupsFromApi() {
     // retrieve the groups
-    jQuery.getJSON(
-      this.groupsEndPoint,
-      ( groups ) => {
-        if ( groups ) {
-          this.setState({ groups });
-        }
+    apiFetch( { path: this.groupsEndPoint } ).then( groups => {
+      if ( groups ) {
+        this.setState({ groups });
       }
-    );
+    });
   }
 
 
@@ -200,15 +198,12 @@ class tagGroupsTabbedCloudParameters extends Component {
   * Loading Taxonomies (own REST API endpoint)
   */
   getTaxonomiesFromApi() {
-    // retrieve the groups
-    jQuery.getJSON(
-      this.taxonomiesEndPoint,
-      ( taxonomies ) => {
-        if ( taxonomies ) {
-          this.setState({ taxonomies });
-        }
+    // retrieve the taxonomies
+    apiFetch( { path: this.taxonomiesEndPoint } ).then( taxonomies => {
+      if ( taxonomies ) {
+        this.setState({ taxonomies });
       }
-    );
+    });
   }
 
 
@@ -216,7 +211,7 @@ class tagGroupsTabbedCloudParameters extends Component {
   * Loading Posts
   */
   getPostsFromApi() {
-    return ( new wp.api.collections.Posts() ).fetch().then(( fullPosts ) => {
+    apiFetch( { path: siteUrl + '/wp-json/wp/v2/posts?per_page=100' } ).then( fullPosts => {
       if ( fullPosts ) {
         let posts = [
           { value: -1, label: __('off') },
@@ -544,16 +539,6 @@ class tagGroupsTabbedCloudParameters extends Component {
                 value={ tags_post_id }
                 options={ this.state.posts }
               />
-              <TagGroupsHelp topic="groups_post_id"/>
-              <label htmlFor="tg_input_group_post_id">
-  						{ __( 'Use groups of the following post:' ) }
-              </label>
-              <Select
-                id="tg_input_group_post_id"
-                onChange={ ( option ) => { if ( option ) setAttributes( { groups_post_id:option.value } ) } }
-                value={ groups_post_id }
-                options={ this.state.posts }
-              />
             </PanelBody>
 
             <PanelBody title={ __( 'Groups and Tabs' ) } initialOpen={false}>
@@ -616,6 +601,16 @@ class tagGroupsTabbedCloudParameters extends Component {
                 />
                 </div>
               }
+              <TagGroupsHelp topic="groups_post_id"/>
+              <label htmlFor="tg_input_group_post_id">
+  						{ __( 'Use groups of the following post:' ) }
+              </label>
+              <Select
+                id="tg_input_group_post_id"
+                onChange={ ( option ) => { if ( option ) setAttributes( { groups_post_id:option.value } ) } }
+                value={ groups_post_id }
+                options={ this.state.posts }
+              />
             </PanelBody>
 
             <PanelBody title={ __( 'Advanced Styling' ) } initialOpen={false}>
@@ -684,15 +679,23 @@ class tagGroupsTabbedCloudParameters extends Component {
           </div>
         </InspectorControls>
       ),
-      <div className="chatt-mango-editor">
+      <div className="chatty-mango-editor">
+        <table style={{border:'none'}}>
+        <tr>
+        <td>
         <img src={logoUrl} alt='logo' style={{float:'left', margin:15}}/>
-        <h3>{ __( 'Tabbed Tag Cloud' ) }</h3>
-        <div className="cm-gutenberg dashicons-before dashicons-admin-generic">
-          { __( 'Select this block and customize the tag cloud in the Inspector.' ) }
-        </div>
-        <div className="cm-gutenberg dashicons-before dashicons-welcome-view-site">
-          { __( 'See the output with Preview.' ) }
-        </div>
+        </td>
+        <td>
+          <h3>{ __( 'Tabbed Tag Cloud' ) }</h3>
+          <div className="cm-gutenberg dashicons-before dashicons-admin-generic">
+            { __( 'Select this block and customize the tag cloud in the Inspector.' ) }
+            </div>
+            <div className="cm-gutenberg dashicons-before dashicons-welcome-view-site">
+            { __( 'See the output with Preview.' ) }
+            </div>
+        </td>
+        </tr>
+        </table>
       </div>
     ]
   }
@@ -768,7 +771,7 @@ var cmTagGroupsTabsBlock = registerBlockType( 'chatty-mango/tag-groups-cloud-tab
     },
     add_premium_filter: {// configurable in block
       type: 'integer',
-      default: 1
+      default: 0
     },
     amount: {// configurable in block
       type: 'integer',

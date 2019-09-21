@@ -3,7 +3,7 @@
 Plugin Name: Cool Tag Cloud
 Plugin URI: https://wordpress.org/plugins/cool-tag-cloud/
 Description: A simple, yet very beautiful tag cloud.
-Version: 2.05
+Version: 2.16
 Author: WPKube
 Author URI: https://www.wpkube.com/
 Text Domain: cool-tag-cloud
@@ -24,15 +24,18 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 		'number'        => 20,
 		'orderby'       => 'name',
 		'order'         => 'ASC',
-		'taxonomy'      => 'post_tag',
-		'exclude'       => null,
-		'include'       => null,
+		'taxonomy'      => array( 'post_tag' ),
+		'exclude'       => '',
+        'include'       => '',
+        'child_of'      => '',
 		'tooltip'       => 'Yes',
 		'texttransform' => 'none',
 		'nofollow'      => 'No',
 		'imagestyle'    => 'ctcdefault',
 		'imagealign'    => 'ctcleft',
-        'animation'     => 'No'
+        'animation'     => 'No',
+        'on_single_display' => 'global',
+        'show_count' => 'no',
 	);
 
 	public function __construct() {
@@ -43,7 +46,7 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
     //render tagcloud
 	public function widget($p_args, $p_instance) {
 		extract($p_args, EXTR_PREFIX_ALL, 'l_args');
-		
+
 		if (!empty( $p_instance['title'])) {
 			$l_title = $p_instance['title'];
 		} else {
@@ -61,10 +64,20 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 		$l_tag_params["echo"] = 0;
 		if ($l_tag_params["tooltip"] == 'No') {add_filter('wp_tag_cloud', 'ctc_remove_title_attributes');};
 		if ($l_tag_params["nofollow"] == 'Yes') {add_filter('wp_tag_cloud', 'ctc_nofollow_tag_cloud');};
+		if ( $l_tag_params['on_single_display'] == 'local' && ( is_single() || is_singular( array( 'post', 'page' ) ) ) ) {
+			$tag_ids = wp_get_post_terms( get_the_ID(), $l_tag_params['taxonomy'], array( 'fields' => 'ids' ) );
+			$l_tag_params['include'] = $tag_ids;
+		}
+		if ( $l_tag_params['show_count'] == 'yes' ) {
+			$l_tag_params['show_count'] = true;
+		} else {
+			$l_tag_params['show_count'] = false;
+		}
+        add_filter( 'wp_generate_tag_cloud_data', 'cool_tag_cloud_active_tag' );
 		$l_tag_cloud_text = wp_tag_cloud( $l_tag_params  );
+		remove_filter( 'wp_generate_tag_cloud_data', 'cool_tag_cloud_active_tag' );
 		if ($l_tag_params["tooltip"] == 'No') {remove_filter('wp_tag_cloud', 'ctc_remove_title_attributes');};
 		if ($l_tag_params["nofollow"] == 'Yes') {remove_filter('wp_tag_cloud', 'ctc_nofollow_tag_cloud');};
-
 		echo '<div class="cool-tag-cloud">';
 		if ($l_tag_params["font-weight"] == "Bold") {echo '<div class="cloudbold">';}
         if ($l_tag_params["animation"] == "Yes") {echo '<div class="animation">';}
@@ -280,24 +293,24 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 		echo '</select>';
 		echo '</p>';
 
-		$l_current_tax = $this->_get_current_taxonomy($p_instance);
-		echo '<p>';
-		echo '<label for="' . $this->get_field_id('taxonomy') . '">' .
-			__('Taxonomy:', 'cool-tag-cloud') . '</label>';
-		echo '<select class="widefat" id="' . 
-			$this->get_field_id('taxonomy') . '" name="' . 
-			$this->get_field_name('taxonomy') . '">';
-		foreach(get_taxonomies() as $l_taxonomy) {
-			$l_tax = get_taxonomy($l_taxonomy);
-			if (!$l_tax->show_tagcloud || empty($l_tax->labels->name)) {
-				continue;
-			}
-			echo '<option ' . selected($l_taxonomy, $l_current_tax, false) .
-				' value="' . esc_attr($l_taxonomy) . '">' .
-				$l_tax->labels->name . '</option>';
-		}
-		echo '</select>';
-		echo '</p>';
+        
+        $l_current_tax = $this->_get_current_taxonomy($p_instance);
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('taxonomy'); ?>"><?php _e('Taxonomy:', 'cool-tag-cloud'); ?></label>
+            <select multiple class="widefat" name="<?php echo $this->get_field_name('taxonomy'); ?>[]" id="<?php echo $this->get_field_id('taxonomy'); ?>">
+                <?php foreach ( get_taxonomies() as $l_taxonomy ) : ?>
+                    <?php
+                        $l_tax = get_taxonomy($l_taxonomy);
+                        if ( ! $l_tax->show_tagcloud || empty( $l_tax->labels->name ) ) continue;
+                    ?>
+                    <option value="<?php echo esc_attr($l_taxonomy); ?>" <?php
+                        if ( in_array( $l_taxonomy, $l_current_tax ) ) echo 'selected';
+                    ?>><?php echo $l_tax->labels->name; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+        <?php
 				
 		echo '<p>';
 		echo '<label for="' . $this->get_field_id('tooltip') . '">' .
@@ -322,9 +335,35 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 			' value="No">' . __('No', 'cool-tag-cloud') .'</option>';
 		echo '</select>';
 		echo '</p>';
-		
-		echo '<p><a target="_blank" title="' . __('Donate with PayPal','cool-tag-cloud') .'" href="http://goo.gl/CcxWYg"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" /></a></p>    ';
 
+		?>
+		<p>
+			<label for="<?php $this->get_field_id('show_count'); ?>"><?php esc_html_e( 'Show post counts', 'cool-tag-cloud' ); ?></label>
+			<select class="widefat" id="<?php echo $this->get_field_id('show_count'); ?>" name="<?php echo $this->get_field_name('show_count'); ?>">
+				<option value="yes" <?php selected( 'yes', $l_instance['show_count'] ); ?>><?php esc_html_e( 'Yes', 'cool-tag-cloud' ); ?></option>
+				<option value="no" <?php selected( 'no', $l_instance['show_count'] ); ?>><?php esc_html_e( 'No', 'cool-tag-cloud' ); ?></option>
+			</select>
+		</p>
+		<p>
+			<label for="<?php $this->get_field_id('on_single_display'); ?>"><?php esc_html_e( 'On single post display', 'cool-tag-cloud' ); ?></label>
+			<select class="widefat" id="<?php echo $this->get_field_id('on_single_display'); ?>" name="<?php echo $this->get_field_name('on_single_display'); ?>">
+				<option value="global" <?php selected( 'global', $l_instance['on_single_display'] ); ?>><?php esc_html_e( 'All tags', 'cool-tag-cloud' ); ?></option>
+				<option value="local" <?php selected( 'local', $l_instance['on_single_display'] ); ?>><?php esc_html_e( 'Tags from the shown post', 'cool-tag-cloud' ); ?></option>
+			</select>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('include'); ?>"><?php esc_html_e( 'Include', 'cool-tag-cloud' ); ?><br><small><?php esc_html_e( 'Enter IDs of the tags separated by a comma. Example: 1,2,3,4', 'cool-tag-cloud' ); ?></small></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('include'); ?>" name="<?php echo $this->get_field_name('include'); ?>" type="text" value="<?php echo esc_attr($l_instance['include']); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('exclude'); ?>"><?php esc_html_e( 'Exclude', 'cool-tag-cloud' ); ?><br><small><?php esc_html_e( 'Enter IDs of the tags separated by a comma. Example: 1,2,3,4', 'cool-tag-cloud' ); ?></small></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('exclude'); ?>" name="<?php echo $this->get_field_name('exclude'); ?>" type="text" value="<?php echo esc_attr($l_instance['exclude']); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('child_of'); ?>"><?php esc_html_e( 'Child of', 'cool-tag-cloud' ); ?><br><small><?php esc_html_e( 'The ID of the tag/category. Shows children terms.', 'cool-tag-cloud' ); ?></small></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('child_of'); ?>" name="<?php echo $this->get_field_name('child_of'); ?>" type="text" value="<?php echo esc_attr($l_instance['child_of']); ?>" />
+		</p>
+		<?php
 		
 	}
 
@@ -459,7 +498,7 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 		} else {
 			$l_instance['orderby'] = $p_old_instance['orderby'];
 		}
-
+		
 		if ('ASC' == $p_new_instance['order']) {
 			$l_instance['order'] = 'ASC';
 		} else if ('DESC' == $p_new_instance['order']) {
@@ -470,10 +509,7 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 			$l_instance['order'] = $p_old_instance['order'];
 		}
 
-		if ("" != get_taxonomy(stripslashes($p_new_instance['taxonomy']))) {
-			$l_instance['taxonomy'] = 
-				stripslashes($p_new_instance['taxonomy']);
-		}
+		$l_instance['taxonomy'] = $p_new_instance['taxonomy'];
 		
 		if ('Yes' == $p_new_instance['tooltip']) {
 			$l_instance['tooltip'] = 'Yes';
@@ -498,16 +534,31 @@ class Cool_Tag_Cloud_Widget extends WP_Widget {
 		} else {
 			$l_instance['animation'] = $p_old_instance['animation'];
 		}
+
+		$l_instance['on_single_display'] = sanitize_text_field( $p_new_instance['on_single_display'] );
+
+		$l_instance['show_count'] = sanitize_text_field( $p_new_instance['show_count'] );
+
+		$l_instance['include'] = sanitize_text_field( $p_new_instance['include'] );
+        $l_instance['exclude'] = sanitize_text_field( $p_new_instance['exclude'] );
+        
+        $l_instance['child_of'] = sanitize_text_field( $p_new_instance['child_of'] );
 		
 		return $l_instance;
 	}
 
 	//get taxonomy
 	function _get_current_taxonomy($p_instance) {
-		if (!empty($p_instance['taxonomy']) && 
-			 taxonomy_exists($p_instance['taxonomy'])) {
+
+        // if not array make it into an array
+        if ( ! empty( $p_instance['taxonomy'] ) && is_string( $p_instance['taxonomy'] ) ) {
+            $p_instance['taxonomy'] = array( $p_instance['taxonomy'] );
+        }
+
+        if ( ! empty($p_instance['taxonomy'] ) ) {
 			return $p_instance['taxonomy'];
-		}
+        }
+        
 		return $this->m_defaults['taxonomy'];
 	}
 }
@@ -519,7 +570,9 @@ function ctc_nofollow_tag_cloud($text) {
     return str_replace('<a href=', '<a rel="nofollow" href=',  $text);	
 }
 
-add_action('widgets_init', create_function('', 'register_widget( "Cool_Tag_Cloud_Widget" );'));
+function cool_tag_cloud_register_widget() {
+	register_widget( "Cool_Tag_Cloud_Widget" );
+} add_action('widgets_init', 'cool_tag_cloud_register_widget' );
 
 function cool_tag_cloud_files() {
 	$purl = plugins_url();
@@ -533,4 +586,94 @@ function cool_tag_cloud_setup(){
 }
 add_action('init', 'cool_tag_cloud_setup');
 
-?>
+function cool_tag_cloud_sc( $atts = array(), $content = false ) {
+
+	$defaults = array( 
+		'font_weight'   => 'normal',
+		'font_family'   => 'Arial, Helvetica, sans-serif',
+		'smallest'      => 10,
+		'largest'       => 10,
+		'format'        => 'flat',
+		'separator'     => '',
+		'unit'          => 'px',
+		'number'        => 20,
+		'orderby'       => 'name',
+		'order'         => 'ASC',
+		'taxonomy'      => 'post_tag',
+		'exclude'       => null,
+		'include'       => null,
+		'tooltip'       => 'yes',
+		'text_transform' => 'none',
+		'nofollow'      => 'no',
+		'style'    => 'default',
+		'align'    => 'left',
+        'animation'     => 'no',
+        'on_single_display' => 'global',
+        'show_count' => 'no',
+        'child_of' => '',
+	);
+
+	ob_start();
+
+		$l_tag_params = wp_parse_args($atts, $defaults);
+		$l_tag_params['echo'] = false;
+		if ($l_tag_params["tooltip"] == 'no') {add_filter('wp_tag_cloud', 'ctc_remove_title_attributes');};
+		if ($l_tag_params["nofollow"] == 'yes') {add_filter('wp_tag_cloud', 'ctc_nofollow_tag_cloud');};
+		if ( $l_tag_params['on_single_display'] == 'local' && ( is_single() || is_singular( array( 'post', 'page' ) ) ) ) {
+			$tag_ids = wp_get_post_terms( get_the_ID(), $l_tag_params['taxonomy'], array( 'fields' => 'ids' ) );
+			$l_tag_params['include'] = $tag_ids;
+		}
+		if ( $l_tag_params['show_count'] == 'yes' ) {
+			$l_tag_params['show_count'] = true;
+		} else {
+			$l_tag_params['show_count'] = false;
+        }
+		add_filter( 'wp_generate_tag_cloud_data', 'cool_tag_cloud_active_tag' );
+		$l_tag_cloud_text = wp_tag_cloud( $l_tag_params  );
+		remove_filter( 'wp_generate_tag_cloud_data', 'cool_tag_cloud_active_tag' );
+		if ($l_tag_params["tooltip"] == 'no') {remove_filter('wp_tag_cloud', 'ctc_remove_title_attributes');};
+		if ($l_tag_params["nofollow"] == 'yes') {remove_filter('wp_tag_cloud', 'ctc_nofollow_tag_cloud');};
+
+		echo '<div class="cool-tag-cloud">';
+			if ($l_tag_params["font_weight"] == "bold") {echo '<div class="cloudbold">';}
+				if ($l_tag_params["animation"] == "yes") {echo '<div class="animation">';}
+					echo '<div class="ctc' . $l_tag_params["style"] . '">';
+						echo '<div class="ctc' . $l_tag_params["align"] . '">';
+							echo '<div class="' . $l_tag_params["font_family"] . '" style="text-transform:' . $l_tag_params["text_transform"] . '!important;">';
+								echo $l_tag_cloud_text;
+							echo '</div>';
+						echo '</div>';
+					echo '</div>';
+				if ($l_tag_params["animation"] == "yes") {echo '</div>';}
+			if ($l_tag_params["font_weight"] == "bold") {echo '</div>';}
+		echo '</div>';		
+
+	$output = ob_get_contents();
+	ob_end_clean();
+
+	return $output;
+
+} add_shortcode( 'cool_tag_cloud', 'cool_tag_cloud_sc' );
+
+function cool_tag_cloud_active_tag( $tags_data ) {
+
+	if ( is_singular( 'post' ) ) {
+		
+		$args = array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'ids');
+		$current_post_tags = wp_get_post_terms( get_the_ID(), 'post_tag', $args );
+		$current_post_cats = wp_get_post_terms( get_the_ID(), 'category', $args );
+
+		foreach ( $tags_data as $key => $tag ) {
+			if ( in_array( $tag['id'], $current_post_tags ) ) {
+				$tags_data[$key]['class'] =  $tags_data[$key]['class'] . ' ctc-active';
+			}
+			if ( in_array( $tag['id'], $current_post_cats ) ) {
+				$tags_data[$key]['class'] =  $tags_data[$key]['class'] . ' ctc-active';
+			}
+		}
+
+	}
+
+	return $tags_data;
+
+}

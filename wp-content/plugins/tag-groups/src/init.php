@@ -43,11 +43,14 @@ add_action( 'enqueue_block_assets', 'chatty_mango_tag_groups_block_assets' );
 * @since 1.0.0
 */
 function chatty_mango_tag_groups_editor_assets() {
+
+	global $tag_groups_premium_fs_sdk;
+
 	// Scripts.
 	wp_enqueue_script(
 		'chatty-mango_tag-groups-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ) // Dependencies, defined above.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ) // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __FILE__ ) . 'block.js' ) // Version: filemtime — Gets file modification time.
 	);
 
@@ -57,7 +60,7 @@ function chatty_mango_tag_groups_editor_assets() {
 		'siteUrl' 	=> get_option( 'siteurl' ),
 		'siteLang'	=> '',	// for future use
 		'pluginUrl'	=> TAG_GROUPS_PLUGIN_URL,
-		'hasPremium'	=> defined( 'TAG_GROUPS_PREMIUM_MINIMUM_VERSION_WP' ),
+		'hasPremium'	=> $tag_groups_premium_fs_sdk->can_use_premium_code(),
 	);
 
 	wp_localize_script( 'chatty-mango_tag-groups-block-js', 'ChattyMangoTagGroupsGlobal', $args );
@@ -70,10 +73,15 @@ function chatty_mango_tag_groups_editor_assets() {
 		// filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // Version: filemtime — Gets file modification time.
 	);
 
-	wp_add_inline_script(
-		'wp-i18n',
-		'wp.i18n.setLocaleData('.json_encode(gutenberg_get_jed_locale_data('tag-groups')).');'
-	);
+	if ( function_exists( 'gutenberg_get_jed_locale_data' ) ) {
+
+		wp_add_inline_script(
+			'wp-i18n',
+			'wp.i18n.setLocaleData(' . json_encode( gutenberg_get_jed_locale_data('tag-groups') ) . ');'
+		);
+
+	}
+
 } // End function chatty_mango_tag_groups_editor_assets().
 
 // Hook: Editor assets.

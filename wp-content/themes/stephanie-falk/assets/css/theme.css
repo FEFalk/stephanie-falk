@@ -115,10 +115,8 @@ input[type=submit]:hover, input[type=submit]:focus, input[type=submit]:active {
   margin: 11px 0;
   display: inline-block; }
 
-#primary-nav {
-  margin-top: 30px; }
-  #primary-nav ul li a {
-    font-family: "Arimo", "One Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+#primary-nav ul li a {
+  font-family: "Montserrat", "One Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
 
 .banner-caption h1,
 .banner-caption h2 {

@@ -1,11 +1,11 @@
 === Pods - Custom Content Types and Fields ===
-Contributors: sc0ttkclark, pglewis, jimtrue, jamesgol, keraweb, ramoonus, nicdford, Shelob9, clubduece, dan.stefan, Desertsnowman, curtismchale, mgibbs189, mikedamage, jchristopher, pcfreak30
+Contributors: sc0ttkclark, pglewis, jimtrue, keraweb, quasel, jamesgol, ramoonus, nicdford, Shelob9, clubduece, dan.stefan, Desertsnowman, curtismchale, mgibbs189, mikedamage, jchristopher, pcfreak30
 Donate link: https://pods.io/friends-of-pods/
 Tags: pods, custom post types, custom taxonomies, content types, custom fields, cck, database, user fields, comment fields, media fields, relationships, drupal
 Requires at least: 4.5
+Tested up to: 5.2
 Requires PHP: 5.3
-Tested up to: 4.9.5
-Stable tag: 2.7.3
+Stable tag: 2.7.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,7 +122,6 @@ We also do our best to integrate and play nicely with other projects:
  * [Conductor](https://conductorplugin.com/)
  * [Timber](http://upstatement.com/timber/)
  * [Gravity Forms](http://www.gravityforms.com/) Using the [Pods Gravity Forms Add-on](https://wordpress.org/plugins/pods-gravity-forms/)
- * [Caldera Forms](http://calderaforms.com) Using the [Pods Caldera Forms Add-on](https://github.com/pods-framework/pods-caldera-forms)
  * [Beaver Builder](https://www.wpbeaverbuilder.com/) and [Beaver Themer](https://www.wpbeaverbuilder.com/beaver-themer/) Using the [Pods Beaver Themer Add-On](https://wordpress.org/plugins/pods-beaver-builder-themer-add-on/)
 * Themes we've integrated with
  * [Builder](http://www.ithemes.com/) (iThemes)
@@ -179,6 +178,189 @@ Join us in further translating the Pods interface at: [https://translate.wordpre
 We also have a dedicated [Slack Chat](https://pods.io/chat/) channel to help our translators get started and to support them on the process.
 
 == Changelog ==
+
+= 2.7.15 - September 5th 2019 =
+
+**Enhancements**
+* Enhancement: Add year range option to date & datetime fields. #5442 (@JoryHogeveen)
+* Enhancement: Support single select relationships in templates when using `[each]`. #4507 (@sc0ttkclark, @JoryHogeveen)
+* Enhancement: Prevent creation of Pods using reserved keywords from WordPress Codex and Pods. #5428 (@JoryHogeveen)
+* Enhancement: Allow all callables to be passed in magic tags. #5436 (@JoryHogeveen)
+
+**Bug Fixes**
+* Fixed: Always convert database value for date/time fields without timezone to maintain the actual value. #5423 & #5424 (@JoryHogeveen)
+* Fixed: Solve issues with saving date/time fields in other locales. #5444, #5421, #5415 & #5451 (@JoryHogeveen)
+* Fixed: Import from file with absolute path. #5430 (@mistraloz)
+* Fixed: Fix numeric soft format issue removing decimals & numeric slider input formatting. #5281 & #5215 (@JoryHogeveen)
+* Fixed: Fix & improve error handling & debug logs. #5452, #5450, #5440, #5419, #5435 & #5453 (@JoryHogeveen)
+* Fixed: Corrected Malaysian Ringgit currency sign. #5446 (@JoryHogeveen)
+* Fixed: Flush Pod cache before returning errors, #5420 (@JoryHogeveen)
+
+= 2.7.14 - July 9th 2019 =
+
+**Bug Fixes**
+
+* Fixed: Always convert database value for date/time fields with UTC timezone to maintain the actual value, #5382, #5402, #5403 (@JoryHogeveen)
+* Fixed: Stop add new button from being disabled when no selection has been made yet for single select, #5401 (@pglewis)
+* Fixed: Resolved PHP notices in `PodsAPI::save_pod_item()`, #5411 (@pglewis)
+
+= 2.7.13 - June 28th 2019 =
+
+**Enhancements**
+
+* Enhancement: Support meta fields as display field for relationships, #5299 (@sc0ttkclark)
+* Enhancement: DateTime/Time field code and performance #5302 (@JoryHogeveen)
+* Enhancement: Added Nigerian Naira currency, #5377 (@webcreativeng)
+* Enhancement: Added filter `pods_enqueue_dfv_on_front` for enqueueing DFV scripts on frontend, #5313 & #5303 (@nicdford)
+* Added: Add debug information for Pods to Site Health Info area, #5399 (@sc0ttclark, @JoryHogeveen)
+
+**Bug Fixes**
+
+* Fixed: Cursor is jumping to the start of the block when Gutenberg autosaves, #5274 (@pglewis)
+* Fixed: Select drop-downs set to required, #5031 (@pglewis)
+* Fixed: HTML escaping issue in the Manage Fields list, #5246 (@pglewis)
+* Fixed: Translate Pods stuck with Portuguese translation in the Admin menus, #5259 (@JoryHogeveen)
+* Fixed: option cache handling when using external object cache, #5294 (@sc0ttkclark)
+* Fixed: Fix force WWW option on website/URL fields, #4881 (@pglewis)
+* Fixed: Phone field should not put anything in the field input on 'blank' values, #4881 (@pglewis)
+* Fixed: Versioned tag names are not compatible with Composer, #5278 (@pglewis)
+* Fixed: `get_post_meta()` always retriggers `pods_transient_set()`, #4690 (@pglewis)
+* Fixed: Date output in magic tags for date fields uses DateTime class by default instead of date_il8n, #5296 (@JoryHogeveen)
+* Fixed: PHP 7.3 `compact()` notices due to undefined var names, #5266 (@sc0ttkclark)
+* Fixed: Use `Marionette.noConflict()` to keep a private copy of Marionette, #5237 & #5354 (@pglewis)
+* Fixed: Remove floats from fields within pods manage fields (UI), #5362 (@nicdford)
+* Fixed: Set table charset for Pods Advanced Content Types to WP default charset, #5276 (@JoryHogeveen)
+* Fixed: Avoid PHP warnings by removing unused $check_value logic in PodsField_Pick, #5205 (@ziqbal, @JoryHogeveen)
+* Fixed: Fix PodsData fetch for when using object cache and settings pages, #4960 (@pcfreak30, @sc0ttclark, @JoryHogeveen)
+* Fixed: Moved session_id() check outside the big conditional so it's always executed, #5182 (@mastef)
+* Fixed: Change deprecated (since WP 5.1) hook `wpmu_new_blog` to `wp_insert_site` with backwards compatibility, #5369 (@JoryHogeveen)
+* Fixed: Error when PodsInit isn't available on network pages, #3353 (@JoryHogeveen)
+* Fixed: Shortcodes no longer stop the page from loading when they encounter SQL errors, #5279 (@sc0ttclark, @JoryHogeveen)
+
+= 2.7.12 - December 20th 2018 =
+
+**Enhancements**
+
+* Enhancement: Sort currency list alphabetically by name, add Indonesian Rupiah (Rp) and US Cent currency support, #5247 (@sc0ttkclark)
+
+**Bug Fixes**
+
+Fixed: Serial comma display works again for Users, Comments, and Media relationships when used in Pods::display() and magic tag templating without specifying the object field you want to display, #5251 (@sc0ttkclark)
+
+= 2.7.11 - December 7th 2018 =
+
+**Enhancements**
+
+* Enhancement: Added: New pods_data_auto_calculate_total_found filter can be set to true to auto-calculate total_found() number right away after a Pods::find() query runs, defaults to false, #5232, (@sc0ttkclark)
+
+**Bug Fixes**
+
+* Fixed: Javascript errors on pages without the Gutenberg editor active under certain circumstances, #5225 (@pglewis)
+* Fixed: Avoid extra user queries when not necessary, #5230 (@sc0ttkclark)
+
+= 2.7.10 - December 5th 2018 =
+
+**Gutenberg / WordPress 5.0 Compatibility**
+
+* Fixed: TinyMCE Compatibility Bug for Gutenberg, #5217 (@pglewis)
+* Fixed: Read-only Checkboxes now properly save values as 0 or 1, #4961 (@atanas-angelov-dev)
+* Fixed: Scrollbar Compatibility bug for List View in Gutenberg Editor, #5220 (@pglewis)
+* Fixed: Modal Support for Gutenberg, Add/edit Modal now triggers save and close to the modal, #5191 (@pglewis)
+* Fixed: Component header parsing for developer/tableless mode, #5222 (@sc0ttkclark)
+* Fixed: Currency symbol no longer overlays input field in WP 5.0, #5219 (@pglewis, @sc0ttkclark)
+
+**Enhancements**
+
+* Enhancement: Added support for new  WP 5.0 custom post type labels used by Gutenberg, #5223 (@wpstudio, @sc0ttkclark)
+* Enhancement: Add pods conditional logic handling on frontend forms, #5136 (@JoryHogeveen)
+* Enhancement: Add current memory usage to stats, #5178 (@sc0ttkclark)
+* Enhancement: Add support for Taxonomy descriptions, #4766 (@sc0ttkclark)
+* Enhancement: Component Pages does not allow adding page templates in plugins, #4734 (@creabrain)
+* Enhancement: Add Pods functions to Query Monitor conditional, #5208 (@JoryHogeveen)
+* Enhancement: Add bi-directional status label to relationship fields, #5200 (@JoryHogeveen)
+* Enhancement: Removed old forum feed, inserted the wordpress.org feed, and squelched warnings from SimplePie/PHP 7+, #5172, #4363 (@pglewis)
+
+**Bug Fixes**
+
+* Fixed: pods->save() does not clear fields with shorthand syntax, #5166 (@mastef)
+* Fixed: Comma character breaks custom post type dropdown, #2042 (@sc0ttkclark)
+* Fixed: Compatibility with Admin Columns 3.2+, #5129 (@JoryHogeveen, @DGStefan)
+* Fixed: Missing Styles of DFV form field using $pods->form, #5056 (@pglewis)
+* Fixed: "Single Select" Relationship Return differently depending on Format, #5138 (@pglewis)
+* Fixed: Media modal doesn't work on frontend using pods form, #4715 (@pglewis)
+* Fixed: Use minified versions of Backbone.Marionette and Backbone.Radio, #5115
+* Fixed: Always enqueue the DFV script by default if in the admin, #5111 (@pglewis, @sc0ttkclark)
+* Fixed: Add static groups cache for PodsMeta::groups_get() to improve memory usage on bulk wp_insert_post and other similar calls, #5088 (@sc0ttkclark)
+* Fixed: Only disable components when using PODS_TABLELESS if the component is relying on custom tables, #5206 (@JoryHogeveen)
+* Fixed: PHP Warning for array key pods_rel not found, #5210 (@JoryHogeveen)
+
+= 2.7.9 - August 9th 2018  =
+
+**Features/Enhancements**
+
+* Added: Support for Pods::fields() argument keyed which when set to true will return the array for relationship fields with the IDs used as keys, #5092 (@sc0ttkclark)
+* Added: pods_shortcode_output filter to allow customization of shortcode output based on shortcode attributes, #5083 (@sc0ttkclark)
+
+**Bug Fixes**
+
+* Fixed: Fix compatibility issue with Polylang & WPML when getting the current language from the edit post and edit tax pages. #5060 (JoryHogeveen)
+
+= 2.7.8 - July 26th 2018  =
+
+* Hotfix: Time field generates a fatal error on PHP prior to 5.5, #5079 (@davegaeddert)
+
+= 2.7.7 - July 26th 2018  =
+
+**Features/Enhancements/Improvements**
+
+* Code Quality: Disallow multiple assignments and assignment inside conditions, #5021 (@GaryJones)
+* Code Quality: WordPress.WhiteSpace.PrecisionAlignment compliance, #5026 (@GaryJones)
+* Code Quality: Use interpolation to construct all dynamic hook names, #4992 (@GaryJones)
+
+**Bug Fixes**
+
+* Fixed: 'others' capability checks for current_user_can pods_{$action}{$pod} vs pods{$action}others{$pod} capabilities, #5043 (@Ulminia, @sc0ttkclark)
+* Fixed: "Export all" button for ACTs does not work, #5005 (@pglewis)
+* Fixed: Pods Template Editor is adding two 'tabs' to the front of the template during Save. #5022 (@pglewis)
+* Fixed: Midnight (00:00) results as 'empty' in an [if][/if] Template Tag. #4999 (@pglewis)
+* Fixed: Non-internationalized string "Add Another Custom Capability". #5028 (@GaryJones, @pglewis)
+
+= 2.7.6 - June 8th 2018  =
+
+* Fixed: Records added modally via DFV's 'Add New' are not selected and don't refresh list view in 2.7.5, #5014 (@sc0ttkclark, @pglewis)
+
+= 2.7.5 - June 7th 2018  =
+
+**Bug Fixes**
+
+* Fixed: Only flush rewrite rules in an admin context, #5006 (@sc0ttkclark)
+* Fixed: SelectWoo fields would sometimes call `focus()` inappropriately #4725 (@GaryJones)
+
+= 2.7.4 - June 6th 2018  =
+
+**Features/Enhancements**
+
+* Code Quality: Address some i18n code standard violations, #4982 (@GaryJones)
+* Code Quality: All @since and @deprecated tags updated to use three digits everywhere, #4995 (@GaryJones)
+* Added: Tooltip for the Hierarchical option for taxonomies, #4949 (@pglewis)
+
+**Bug Fixes**
+
+* Fixed: jQuery.fn.size() is deprecated #3898 (@GaryJones)
+* Fixed: CLI: Fix missing negation on valid & exists checks #4989 (@GaryJones)
+* Fixed: Check for localized 'help' before adding tooltip #4614 (@davidatwhieltrue, @GaryJones)
+* Fixed: Autocomplete/List View broken with "Other WP Objects", #4504 (@pglewis, @sc0ttkclark)
+* Fixed: HTML entities in a field's description are converted when the Pod is loaded again, #4495 (@pglewis)
+* Fixed: Relationship fields related to the _pods_pod or _pods_field post type would not return the correct value, #4979 (@sc0ttkclark)
+* Fixed: Code Editor for Pods Template double-escapes HTML when Visual Editor is OFF in WordPress, #3462 (@pglewis)
+* Fixed: Pods breaks Theme Editor for PHP files, hangs loopback test #4595, #4931 (@jamesgol, @pglewis)
+* Fixed: Time field cannot save midnight #3488, #4937 (@pglewis)
+* Fixed: Resolve file uploads directory check logic for file exports #4970 (@elia-senatore-cippest, @sc0ttkclark)
+* Fixed: Media modal issues in post edits, #4945, #4967 (@pglewis)
+* Fixed: Fatal error if not logged in and accessing wp-admin, #4828 (@therealgilles)
+* Fixed: Pick fields with predefined/custom lists using numeric keys not loading values #4892, #4753 (@pglewis)
+* Fixed: Non-required color-picker field did not allow saving empty value #4919 (@JoryHogeveen)
+* Fixed: CodeMirror fields in Taxonomy and User edit forms #4913 (@pglewis)
 
 = 2.7.3 - May 6th 2018  =
 

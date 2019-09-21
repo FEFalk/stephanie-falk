@@ -220,6 +220,8 @@
 
         $.post(one_ajax.ajaxurl, data, function(response, status) {
             var items = $(response).filter('.grid-item');
+            $(items).addClass('hidden');
+
             var newPage = page+1;
             instagramGrid.data("page", newPage);
             //console.log(response);
@@ -233,11 +235,13 @@
                 });
             });
             $grid.append($(items)).masonry('appended', $(items));
+            $('.tag-groups-cloud, #instagram-section').addClass('loading');
             
             setTimeout(function(){
+                $(items).removeClass('hidden');
                 $grid.masonry('layout');
-                $('.tag-groups-cloud').removeClass('loading');
-            }, 300);
+                $('.tag-groups-cloud, #instagram-section').removeClass('loading');
+            }, 800);
 
         },
         "html"

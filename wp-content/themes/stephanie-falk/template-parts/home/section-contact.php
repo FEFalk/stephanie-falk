@@ -38,21 +38,32 @@
                     <div class="row cpt-custom-fields contact_fields" role="contentinfo">
                         <div class="field-block col-md-6">
                             <?php   echo wpautop($page->post_content); ?>
+                            <div class="contact-items">
                             <?php foreach ($contact_blocks as $key => $block): ?>
-                            <?php if ($block['title'] == "Email") {
+                            <?php
+                            if ($block['title'] == "Adress") {
         ?>
-                            <div class="col-md-12 no-padding margin-vbottom-20">
+                            <div class="col-md-12 no-padding margin-vbottom-10 contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                                <a href="https://goo.gl/maps/oHA3UPn3QF6ZENsS8">
+                                    <?php echo strip_tags($block['block_content']); ?>
+                                </a>
+                            </div>
+                            <?php
+    } elseif ($block['title'] == "Email") {
+        ?>
+                            <div class="col-md-12 no-padding margin-vbottom-10 contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <a>
+                                <a href="mailto:<?php echo strip_tags($block['block_content']); ?>">
                                     <?php echo strip_tags($block['block_content']); ?>
                                 </a>
                             </div>
                             <?php
     } elseif ($block['title'] == "Phone") {
         ?>
-                            <div class="col-md-12 no-padding">
+                            <div class="col-md-12 no-padding contact-item">
                                 <i class="fas fa-phone"></i>
-                                <a>
+                                <a href="tel:<?php echo strip_tags($block['block_content']); ?>">
                                     <?php echo strip_tags($block['block_content']); ?>
                                 </a>
                             </div>
@@ -60,6 +71,7 @@
     } ?>
 
                             <?php endforeach; ?>
+                            </div>
                         </div>
                         <?php if (get_post_meta(get_the_ID(), 'booking_sec_switch', true) != 'off'): ?>
                         <section class="section background col-md-6" id="contact-form" style="background-image: url(<?php echo get_section_background_image('booking_section_bg'); ?>); ">
@@ -166,17 +178,18 @@
             </div>
 
         </div>
-    </div </section>
+    </div> 
+</section>
 
     <?php endif; ?>
-    <div class="col-md-12 no-padding">
-        <div class="section-title text-center">
+    <div class="col-md-12 no-padding" id="map-section">
+        <div class="section-title text-center col-md-12">
             <h2>
                 <?php echo get_post_meta($page->ID, 'map_section_title', true); ?>
             </h2>
         </div>
         <div class="map">
-        <p><iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.8986425648634!2d18.080814816154668!3d59.334646017638285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5a9e56184f%3A0x50075b4d45ba7bb4!2sSkeppargatan%2027%2C%20114%2052%20Stockholm!5e0!3m2!1sen!2sse!4v1568294542105!5m2!1sen!2sse" 
-            width="100%" height="720" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+        <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.9065670246296!2d18.08080751647364!3d59.334513717648406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5a9e39582f%3A0x111d000991e5a7e6!2zRsOlZsOkbmcgU3RobG0!5e0!3m2!1sen!2sse!4v1569018864847!5m2!1sen!2sse" 
+            width="100%" height="720" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
         </div>
     </div>

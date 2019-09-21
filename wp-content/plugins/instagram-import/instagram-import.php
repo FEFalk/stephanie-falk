@@ -1,11 +1,10 @@
 <?php
     /*
      *  Plugin Name: Instagram Import
-    *   Plugin URI: http://mlitzinger.com
     *   Description: Imports Instagram photos as posts to your WordPress site
     *   Version: 1.0
     *   Author: Filiph Eriksson Falk
-    *   Author URI: http://mlitzinger.com
+    *   Author URI: https://www.linkedin.com/in/filiph-eriksson-falk-a89914145/
      *
     */
 

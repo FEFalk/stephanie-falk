@@ -37,12 +37,20 @@
                                 $instagram_posts = pods('instagram-post', $param);
                                 if (0 < $instagram_posts->total()) {
                                     while ($instagram_posts->fetch()) {
-                                        echo $instagram_posts->field('post_content');
+                                        ?>
+                                        <div class="grid-item-container">
+                                        <?php
+                                            echo $instagram_posts->field('post_content');
+                                        ?>
+                                            <div class="instagram-text"><?php echo $instagram_posts->field('post_title'); ?></div>
+                                        </div>
+                                    <?php
                                     }
                                 }
                             ?>
                         </div>
                         <div class="btn btn-dark" id="loadMoreButton">Ladda mer...</div>
+                        <div class="lds-default loading-circle"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                     </div>
                 </div>
             </div>

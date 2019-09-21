@@ -65,7 +65,7 @@ class PodsMigrate {
 	 * @return \PodsMigrate
 	 *
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
-	 * @since   2.0
+	 * @since 2.0.0
 	 */
 	public function __construct( $type = null, $delimiter = null, $data = null ) {
 
@@ -795,7 +795,7 @@ class PodsMigrate {
 		} else {
 			$uploads = wp_upload_dir( current_time( 'mysql' ) );
 
-			if ( ! $uploads || false === $uploads['error'] ) {
+			if ( ! $uploads || false !== $uploads['error'] ) {
 				return pods_error( __( 'There was an issue saving the export file in your uploads folder.', 'pods' ), true );
 			}
 
@@ -850,10 +850,9 @@ class PodsMigrate {
 	}
 
 	/*
-	* The real enchilada!
-	*/
-	/*
-	 EXAMPLES
+	The real enchilada!
+
+	EXAMPLES
 	//// minimal import (if your fields match on both your pods and tables)
 	$import = array('my_pod' => array('table' => 'my_table')); // if your table name doesn't match the pod name
 	$import = array('my_pod'); // if your table name matches your pod name
@@ -1291,7 +1290,7 @@ class PodsMigrate {
 		$path = ABSPATH;
 
 		// Detect path if it is set in the file param.
-		if ( false !== strpos( $file, '/' ) ) {
+		if ( false !== strpos( $file, DIRECTORY_SEPARATOR ) ) {
 			$path = dirname( $file );
 			$file = basename( $file );
 		}
@@ -1310,7 +1309,7 @@ class PodsMigrate {
 
 		$migrate = new self( $format, null, $migrate_data );
 
-		$raw_data = file_get_contents( $file );
+		$raw_data = file_get_contents( $path . DIRECTORY_SEPARATOR . $file );
 
 		// Handle processing the raw data from the format needed.
 		$data = $migrate->parse( $raw_data );
